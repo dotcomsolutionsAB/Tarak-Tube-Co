@@ -1,0 +1,1956 @@
+[
+  {
+    "id": 2474,
+    "name": "Agriculture Pipes & Fittings",
+    "slug": "agriculture-pipes-fittings",
+    "sku": "TT-010",
+    "brand": "FinOlex, APLApollo, Oriplast, Supreme Gold",
+    "description": "With smooth interior surfaces, PVC pipe for agriculture provides superior flow characteristics, enhancing water delivery efficiency in irrigation systems. PVC agriculture pipes are lightweight, making them easy to manage and transport, ensuring quick and efficient installation in various agricultural setups. Our agriculture pipes and fittings are recommended for water temperatures ranging from 1\u00b0C to 45\u00b0C. As the usage temperature increases, the strength of the pipes reduces along with the working pressure.",
+    "specs": {
+      "Size": "20MM - 400MM",
+      "Brand": "FinOlex, APLApollo, Oriplast, Supreme Gold",
+      "Grade": "2.5Kgf/cm2, 4Kgf/cm2, 6Kgf/cm2, 10Kgf/cm2"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/agriculture-pipes-fittings.png",
+    "in_stock": true
+  },
+  {
+    "id": 2464,
+    "name": "ASTM / UPVC Pipes & Fittings",
+    "slug": "astm-upvc-pipes-fittings",
+    "sku": "TT-005",
+    "brand": "FinOlex",
+    "description": "These pipes are ideal for transportation and distribution of water in households including potable water, industrial process lines, saltwater lines, swimming pools, pipes used for hand pumps, and in down-take lines in plumbing systems. Manufactured with added strength and crafting precision, Upvc pipes have a prolonged life advantage over conventional pipes surpassing most or all traditional metal and other plastic pipes. This lightweight product\u2019s abrasion resistance, mechanical strength, toughness, and durability are the key reasons why we are a leader in housing and potable water applications in the plumbing industry. These pipes are manufactured using a lead-free compound and are environment and health friendly.",
+    "specs": {
+      "Size": "1/2\" - 8\"",
+      "Brand": "FinOlex",
+      "Grade": "SCH-40 / SCH - 80"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/astm-upvc-pipes-fittings.png",
+    "in_stock": true
+  },
+  {
+    "id": 2546,
+    "name": "B.P BENDS",
+    "slug": "b-p-bends",
+    "sku": "TT-046",
+    "brand": "Tarak Tube",
+    "description": "G.I FITTINGS",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "G.I. fittings",
+        "slug": "g-i-fittings"
+      }
+    ],
+    "image": "assets/img/products/b-p-bends.png",
+    "in_stock": true
+  },
+  {
+    "id": 2580,
+    "name": "BASIN PILLAR COCK",
+    "slug": "basin-pillar-cock",
+    "sku": "TT-064",
+    "brand": "Paras",
+    "description": "",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/basin-pillar-cock.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2590,
+    "name": "BASIN SINK COCK",
+    "slug": "basin-sink-cock",
+    "sku": "TT-069",
+    "brand": "Paras",
+    "description": "",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/basin-sink-cock.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2582,
+    "name": "BASIN SINK/SWAN COCK",
+    "slug": "basin-sink-swan-cock",
+    "sku": "TT-065",
+    "brand": "Paras",
+    "description": "",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/basin-sink-swan-cock.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2743,
+    "name": "Borewell / Casing Pipes",
+    "slug": "borewell-casing-pipes",
+    "sku": "TT-085",
+    "brand": "Oriplast, Tuffplast",
+    "description": "Borewells and tube wells are important sources of drinkable groundwater that contribute significantly to ensuring that everyone has access to clean water. Our pipes are designed to satisfy the unique needs of various applications, such as lowering pumps for extracting water from subterranean sources, and are produced in compliance with IS 12818 specifications.",
+    "specs": {
+      "Size": "1\" - 12\"",
+      "Brand": "Oriplast, Tuffplast",
+      "Grade": "CM, CS, SCH 40, SCH 80"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/borewell-casing-pipes.png",
+    "in_stock": true
+  },
+  {
+    "id": 2484,
+    "name": "Boring-head",
+    "slug": "boring-head",
+    "sku": "TT-015",
+    "brand": "Dayal",
+    "description": "boring head",
+    "specs": {
+      "Size": "1.5\"- 3\"",
+      "Brand": "Dayal"
+    },
+    "categories": [
+      {
+        "name": "Cast-Iron Hand Pump",
+        "slug": "cast-iron-hand-pump"
+      }
+    ],
+    "image": "assets/img/products/boring-head.png",
+    "in_stock": true
+  },
+  {
+    "id": 2524,
+    "name": "Brass Bibcock",
+    "slug": "brass-bibcock",
+    "sku": "TT-035",
+    "brand": "Turbo",
+    "description": "",
+    "specs": {
+      "Size": "1/2",
+      "Brand": "Turbo"
+    },
+    "categories": [
+      {
+        "name": "Brass Bibcock",
+        "slug": "brass-bibcock"
+      }
+    ],
+    "image": "assets/img/products/brass-bibcock.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2782,
+    "name": "Brass Stop cock",
+    "slug": "brass-stop-cock",
+    "sku": "TT-090",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2"
+    },
+    "categories": [
+      {
+        "name": "House Connection Fittings",
+        "slug": "house-connection-fittings"
+      }
+    ],
+    "image": "assets/img/products/brass-stop-cock.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2526,
+    "name": "Cast Iron Adaptor",
+    "slug": "cast-iron-adaptor",
+    "sku": "TT-036",
+    "brand": "Turbo",
+    "description": "Used in column pipes",
+    "specs": {
+      "Size": "1\"- 4 \"",
+      "Brand": "Turbo"
+    },
+    "categories": [
+      {
+        "name": "Adaptor",
+        "slug": "adaptor"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/cast-iron-adaptor.png",
+    "in_stock": true
+  },
+  {
+    "id": 2776,
+    "name": "Cast Iron Bib cock",
+    "slug": "cast-iron-bib-cock",
+    "sku": "TT-089",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2"
+    },
+    "categories": [
+      {
+        "name": "House Connection Fittings",
+        "slug": "house-connection-fittings"
+      }
+    ],
+    "image": "assets/img/products/cast-iron-bib-cock.jpeg",
+    "in_stock": true
+  },
+  {
+    "id": 2528,
+    "name": "Cast Iron NRV PN 1.6 (Flanged)",
+    "slug": "cast-iron-nrv",
+    "sku": "TT-037",
+    "brand": "Ekam, Drona",
+    "description": "Also know as REFLUX Valve.Non Return Valves are used in pipelines to reduce water hammer and to prevent back flow of water to the pump from rising mains",
+    "specs": {
+      "Size": "2\"-20",
+      "Brand": "Ekam, Drona",
+      "Body": "CAST IRON (IS 210 Gr. FG 200)",
+      "Disk Ring": "LEADED IN BRONZE IS 318 LTB2",
+      "Washer": "LEADED IN BRONZE/BRASS IS 318 LTB2",
+      "Seat Ring": "LEADED IN BRONZE IS 318 LTB2",
+      "Hinge Pin": "STAINLESS STEEL 6 6 0 3 12cr12",
+      "Nuts": "CARBON STEEL (IS 1363 CLASS 4 & 4.6)",
+      "Cover": "CAST IRON (IS 210 Gr. FG 200)",
+      "Disc": "CAST IRON (IS 210 Gr. FG 200)",
+      "Side Plug": "LEADED IN BRONZE IS 318 LTB2",
+      "Hinge": "CAST IRON (IS 210 Gr. FG 200)",
+      "Gasket": "C.N.A.F/RUBBER IS 638 TYPEB",
+      "Studs & Nuts": "CARBON STEEL (IS 1363 CLASS 4 & 4.6)"
+    },
+    "categories": [
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/cast-iron-nrv.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2530,
+    "name": "Cast Iron Sluice Valve PN 1.6 (Flanged)",
+    "slug": "cast-iron-sluice-valve",
+    "sku": "TT-038",
+    "brand": "Ekam, Drona",
+    "description": "Suitable for Isolation duty (Full Open / Full Close) \u2022 Clear water having turbidity up to 5000 ppm and temperature up to 45 C O \u2022 Other fluids with maximum pressure / temperature conditions within the scope of IS: 14846 \u2022 Valves can be designed specialty with suitable material of construction for temperature up to 180 centigrade with limited pressure condition",
+    "specs": {
+      "Size": "2\"-20",
+      "Brand": "Ekam, Drona",
+      "Body": "CAST IRON (IS 210 Gr. FG 200)",
+      "Body Ring": "GUN METAL (IS 318 Gr. LTB2)",
+      "Wedge": "CAST IRON (IS 210 Gr. FG 200)",
+      "Wedge Ring": "GUN METAL (IS 318 Gr. LTB2)",
+      "Wedge Nut": "GUN METAL (IS 318 Gr. LTB2)",
+      "Bolts & Nuts": "CARBON STEEL (IS 1363 CLASS 4 & 4.6)",
+      "Gasket": "RUBBER (IS 638 TYPE B)",
+      "Stem": "S.S. (IS 6603)/BRASS (IS 6912 Gr. FHTB1)",
+      "Bonnet": "CAST IRON (IS 210 Gr. FG 200)",
+      "Suffering Box": "CAST IRON (IS 210 Gr. FG 200)",
+      "Packing(Gland)": "HEMP & JUTE",
+      "Gland": "CAST IRON (IS 210 Gr. FG 200)",
+      "T-Bolts & Nuts": "CARBON STEEL (IS 1363 CLASS 4 & 4.6)",
+      "Hand Wheel": "CAST IRON (IS 210 Gr. FG 200)",
+      "Washer": "CARBON STEEL",
+      "Thrust Plate": "CARBON STEEL",
+      "Screw For Hand Wheel": "CAST IRON (IS 210 Gr. FG 200)"
+    },
+    "categories": [
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/cast-iron-sluice-valve.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2772,
+    "name": "Cast Iron Stop cock",
+    "slug": "cast-iron-stop-cock",
+    "sku": "TT-088",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2"
+    },
+    "categories": [
+      {
+        "name": "House Connection Fittings",
+        "slug": "house-connection-fittings"
+      }
+    ],
+    "image": "assets/img/products/cast-iron-stop-cock.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2486,
+    "name": "cast-iron-boring-pump",
+    "slug": "cast-iron-boring-pump",
+    "sku": "TT-016",
+    "brand": "Dayal",
+    "description": "Cast Iron Hand Pump N6 is a cast iron suction pump, capable of drawing water from shallow depths by creating a partial vacuum in the suction pipe depending as they do on at atmospheric pressure to drive water up to the surface. The pump use is restricted to regions with water table no more than seven (7) meters below the surface.",
+    "specs": {
+      "Brand": "Dayal"
+    },
+    "categories": [
+      {
+        "name": "Cast-Iron Hand Pump",
+        "slug": "cast-iron-hand-pump"
+      }
+    ],
+    "image": "assets/img/products/cast-iron-boring-pump.png",
+    "in_stock": true
+  },
+  {
+    "id": 2482,
+    "name": "Cast-Iron-Hand-Pump",
+    "slug": "cast-iron-hand-pump",
+    "sku": "TT-014",
+    "brand": "Dayal",
+    "description": "CAST IRON HAND PUMP mainly used in rural areas for water supply from underground and also used in agriculture and farming",
+    "specs": {
+      "Brand": "Dayal"
+    },
+    "categories": [
+      {
+        "name": "Cast-Iron Hand Pump",
+        "slug": "cast-iron-hand-pump"
+      }
+    ],
+    "image": "assets/img/products/cast-iron-hand-pump.png",
+    "in_stock": true
+  },
+  {
+    "id": 2468,
+    "name": "CPVC Pipes & Fittings",
+    "slug": "cpvc-pipes-fittings",
+    "sku": "TT-007",
+    "brand": "FinOlex",
+    "description": "CPVC Pipes are manufactured using high grade raw material and the latest technology, making these ideal for hot and cold-water applications. These pipes can withstand higher temperatures as compared to any other plastic piping system. CPVC pipes can be used for water supply and distribution in both domestic and industrial applications, and for solar and electric water heaters. CPVC pipes are lightweight, non-corrosive and long lasting, which make them a good substitute for GI & conventional pipes. These pipes are manufactured using lead free compounds. Hence they are safe, health and environment friendly.",
+    "specs": {
+      "Size": "1/2\" - 6\"",
+      "Brand": "FinOlex",
+      "Grade": "SDR 11 & 13.5"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/cpvc-pipes-fittings.png",
+    "in_stock": true
+  },
+  {
+    "id": 2500,
+    "name": "CPVC-Ball-valves",
+    "slug": "cpvc-ball-valves",
+    "sku": "TT-023",
+    "brand": "Neoseal, Finolex, Kestrel",
+    "description": "Easily use these for managing irrigation of large farms and industrial irrigation needs. Long handle help to adopt sustainable measures and ensures protection against corrosion and ultraviolet radiation. M S Plate helps faster handling in the fields. High-Quality materials and equipped with powerful bolts. Can withstand 100 Psi pressure at 23C 100% leakproof. Zero-maintenance. Corrosion-free. Easy Movement of Ball Valve handle. Meets ASTM F 1970 & ASTM D 2467.",
+    "specs": {
+      "Size": "1/2\" - 3\"",
+      "Brand": "Neoseal, Finolex, Kestrel"
+    },
+    "categories": [
+      {
+        "name": "Ball Valves",
+        "slug": "ball-valves"
+      }
+    ],
+    "image": "assets/img/products/cpvc-ball-valves.png",
+    "in_stock": true
+  },
+  {
+    "id": 2508,
+    "name": "CPVC-SOLVENT-CEMENT",
+    "slug": "cpvc-solvent-cement",
+    "sku": "TT-027",
+    "brand": "Neoseal,Nirwell",
+    "description": "Medium bodied, fast setting, high strength Low VOC CPVC solvent cement. Designed for all grades and types of CPVC pipe and fittings through 4\u201d (101mm) diameter schedule 40 & schedule 80 interference fit and SDR 13.5 & 11. For hot & cold potable water up to 82\u00b0C (180\u00b0F) Certified by NSF International for compliance with NSF/ANSI 14, NSF/ANSI 61, ASTM F-493 & ASTM D-2846. Meets SCAQMD Rule 1168/316A and Qualify for LEED\u00ae Green Building requirements. Brookfield Viscosity: Minimum 500 cP. Store product below 33\u00b0C (90\u00b0F).",
+    "specs": {
+      "Size": "59ml, 118ml, 237ml, 473ml & 946ml",
+      "Brand": "Neoseal,Nirwell"
+    },
+    "categories": [
+      {
+        "name": "Solvent Cement & Adhesives",
+        "slug": "solvent-cement-adhesives"
+      }
+    ],
+    "image": "assets/img/products/cpvc-solvent-cement.png",
+    "in_stock": true
+  },
+  {
+    "id": 2514,
+    "name": "Crack Filler Paste",
+    "slug": "crack-filler-paste",
+    "sku": "TT-030",
+    "brand": "Neo Seal",
+    "description": "",
+    "specs": {
+      "Brand": "Neo Seal"
+    },
+    "categories": [
+      {
+        "name": "Crack filler paste",
+        "slug": "crack-filler-paste"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/crack-filler-paste.png",
+    "in_stock": true
+  },
+  {
+    "id": 2532,
+    "name": "Delivery pipes & Accessories",
+    "slug": "delivery-pipes-accessories",
+    "sku": "TT-039",
+    "brand": "TUFFPLAST",
+    "description": "GARDEN HOSE PIPES",
+    "specs": {
+      "Size": "1/2\"-2\"",
+      "Brand": "TUFFPLAST"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/delivery-pipes-accessories.png",
+    "in_stock": true
+  },
+  {
+    "id": 2488,
+    "name": "Diaphragm-pump",
+    "slug": "diaphragm-pump",
+    "sku": "TT-017",
+    "brand": "Dayal",
+    "description": "",
+    "specs": {
+      "Brand": "Dayal"
+    },
+    "categories": [
+      {
+        "name": "Cast-Iron Hand Pump",
+        "slug": "cast-iron-hand-pump"
+      }
+    ],
+    "image": "assets/img/products/diaphragm-pump.png",
+    "in_stock": true
+  },
+  {
+    "id": 2592,
+    "name": "EAGLE HAND TOOLS",
+    "slug": "eagle-hand-tools",
+    "sku": "TT-079",
+    "brand": "Eagle",
+    "description": "Quality hand tools which offer a wide variety of Spare chains, spare jaws etc",
+    "specs": {
+      "Brand": "Eagle"
+    },
+    "categories": [
+      {
+        "name": "Materials",
+        "slug": "materials"
+      }
+    ],
+    "image": "assets/img/products/eagle-hand-tools.png",
+    "in_stock": true
+  },
+  {
+    "id": 2598,
+    "name": "FINOLEX PIPES AND FITTINGS",
+    "slug": "finolex-pipes-and-fittings",
+    "sku": "TT-083",
+    "brand": "Tarak Tube",
+    "description": "",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Materials",
+        "slug": "materials"
+      }
+    ],
+    "image": "assets/img/products/finolex-pipes-and-fittings.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2550,
+    "name": "G.I ELBOW",
+    "slug": "g-i-elbow",
+    "sku": "TT-048",
+    "brand": "Tarak Tube",
+    "description": "G.I FITTINGS",
+    "specs": {
+      "Size": "1/2\" - 6\"",
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "G.I. fittings",
+        "slug": "g-i-fittings"
+      }
+    ],
+    "image": "assets/img/products/g-i-elbow.png",
+    "in_stock": true
+  },
+  {
+    "id": 2552,
+    "name": "G.I SOCKET",
+    "slug": "g-i-socket",
+    "sku": "TT-049",
+    "brand": "Tarak Tube",
+    "description": "G.I FITTINGS",
+    "specs": {
+      "Size": "1/2\" - 6\"",
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "G.I. fittings",
+        "slug": "g-i-fittings"
+      }
+    ],
+    "image": "assets/img/products/g-i-socket.png",
+    "in_stock": true
+  },
+  {
+    "id": 2548,
+    "name": "G.I TEE",
+    "slug": "g-i-tee",
+    "sku": "TT-047",
+    "brand": "Tarak Tube",
+    "description": "G.I FITTINGS",
+    "specs": {
+      "Size": "1/2\" - 6\"",
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "G.I. fittings",
+        "slug": "g-i-fittings"
+      }
+    ],
+    "image": "assets/img/products/g-i-tee.png",
+    "in_stock": true
+  },
+  {
+    "id": 2534,
+    "name": "G.I. Oil / Well Caps",
+    "slug": "g-i-oil-well-caps",
+    "sku": "TT-040",
+    "brand": "Turbo",
+    "description": "OIL CAPS FOR BOREWELL (REDUCING SIZES)",
+    "specs": {
+      "Size": "2\"-8\"",
+      "Brand": "Turbo"
+    },
+    "categories": [
+      {
+        "name": "Caps",
+        "slug": "caps"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/g-i-oil-well-caps.png",
+    "in_stock": true
+  },
+  {
+    "id": 2536,
+    "name": "G.I. Pipe Clamps",
+    "slug": "g-i-pipe-clamps",
+    "sku": "TT-041",
+    "brand": "Turbo",
+    "description": "G.I PIPE CLAMPS ARE USED FOR HOLDING WATERLINE PIPES SECURELY.",
+    "specs": {
+      "Brand": "Turbo"
+    },
+    "categories": [
+      {
+        "name": "Clamps",
+        "slug": "clamps"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/g-i-pipe-clamps.png",
+    "in_stock": true
+  },
+  {
+    "id": 2538,
+    "name": "HDPE Ball valve",
+    "slug": "hdpe-ball-valve",
+    "sku": "TT-042",
+    "brand": "Turbo",
+    "description": "",
+    "specs": {
+      "Size": "1/2\" - 6\"",
+      "Brand": "Turbo"
+    },
+    "categories": [
+      {
+        "name": "HDPE Ball valve",
+        "slug": "hdpe-ball-valve"
+      }
+    ],
+    "image": "assets/img/products/hdpe-ball-valve.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2540,
+    "name": "HDPE Brass MTA",
+    "slug": "hdpe-brass-mta",
+    "sku": "TT-043",
+    "brand": "Tarak Tube",
+    "description": "HOUSE CONNECTION HDPE FITTINGS",
+    "specs": {
+      "Size": "10MM/15MM",
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "HDPE Brass MTA",
+        "slug": "hdpe-brass-mta"
+      }
+    ],
+    "image": "assets/img/products/hdpe-brass-mta.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2542,
+    "name": "HDPE Manual Butt Welding Machine",
+    "slug": "hdpe-manual-butt-welding-machine",
+    "sku": "TT-044",
+    "brand": "Tarak Tube",
+    "description": "The HDPE pipe jointing machine (also known as HDPE pipe welding machine, HDPE pipe jointer, butt welding machine, etc.) is used for the HDPE butt fusion welding in the water, irrigation, and sewerage pipeline laying.",
+    "specs": {
+      "Size": "63MM-315MM",
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "HDPE Welding Machine",
+        "slug": "welding-machine"
+      }
+    ],
+    "image": "assets/img/products/hdpe-manual-butt-welding-machine.png",
+    "in_stock": true
+  },
+  {
+    "id": 2785,
+    "name": "HDPE PIPE",
+    "slug": "hdpe-pipe",
+    "sku": "TT-091",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "20MM"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/hdpe-pipe.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2544,
+    "name": "HDPE Spigot & Plain Pipes & Fittings",
+    "slug": "hdpe-spigot-plain-pipes-fittings",
+    "sku": "TT-045",
+    "brand": "Tarak Tube",
+    "description": "Hdpe fittings are manufactured from a special grade of body coat approved raw material with the help of technology and skilled knowledge of processing industries. High-density polyethylene (HDPE) pipe fittings are widely used in various industries for their excellent corrosion resistance, high strength, and durability.",
+    "specs": {
+      "Size": "25MM-315MM",
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/hdpe-spigot-plain-pipes-fittings.png",
+    "in_stock": true
+  },
+  {
+    "id": 2594,
+    "name": "HOUSE CONNECTIONS FITTINGS",
+    "slug": "house-connections-fittings",
+    "sku": "TT-080",
+    "brand": "Tarak Tube",
+    "description": "HOUSE CONNECTIONS FITTINGS",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Materials",
+        "slug": "materials"
+      }
+    ],
+    "image": "assets/img/products/house-connections-fittings.png",
+    "in_stock": true
+  },
+  {
+    "id": 2554,
+    "name": "India M II Toolkit",
+    "slug": "india-m-ii-toolkit",
+    "sku": "TT-050",
+    "brand": "Tarak Tube",
+    "description": "",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Toolkit",
+        "slug": "toolkit"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/india-m-ii-toolkit.png",
+    "in_stock": true
+  },
+  {
+    "id": 2476,
+    "name": "India MII TTC Hand Pumps",
+    "slug": "india-mii-ttc-hand-pumps",
+    "sku": "TT-011",
+    "brand": "India M II",
+    "description": "The India Mark II Pump is a robust conventional lever action handpump. It is designed for heavy-duty use, serving communities of 300 persons. The maximum recommended lift is 50 m. The India Mark II is a public domain pump defined by Indian Standards and RWSN specifications.",
+    "specs": {
+      "Brand": "India M II"
+    },
+    "categories": [
+      {
+        "name": "Hand Pump",
+        "slug": "hand-pump"
+      }
+    ],
+    "image": "assets/img/products/india-mii-ttc-hand-pumps.png",
+    "in_stock": true
+  },
+  {
+    "id": 2480,
+    "name": "India-M-II-Hand-Pumps",
+    "slug": "india-m-ii-hand-pumps-2",
+    "sku": "TT-013",
+    "brand": "India M II",
+    "description": "Can use these in slides",
+    "specs": {
+      "Brand": "India M II"
+    },
+    "categories": [
+      {
+        "name": "Hand Pump",
+        "slug": "hand-pump"
+      }
+    ],
+    "image": "assets/img/products/india-m-ii-hand-pumps-2.png",
+    "in_stock": true
+  },
+  {
+    "id": 2478,
+    "name": "India-M-II-Hand-Pumps",
+    "slug": "india-m-ii-hand-pumps",
+    "sku": "TT-012",
+    "brand": "India M II",
+    "description": "Can use these in slides",
+    "specs": {
+      "Brand": "India M II"
+    },
+    "categories": [
+      {
+        "name": "Hand Pump",
+        "slug": "hand-pump"
+      }
+    ],
+    "image": "assets/img/products/india-m-ii-hand-pumps.png",
+    "in_stock": true
+  },
+  {
+    "id": 2556,
+    "name": "India-M-II-Toolkit",
+    "slug": "india-m-ii-toolkit-2",
+    "sku": "TT-051",
+    "brand": "Tarak Tube",
+    "description": "LEG VICE, HAND VICE",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Toolkit",
+        "slug": "toolkit"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/india-m-ii-toolkit-2.png",
+    "in_stock": true
+  },
+  {
+    "id": 2494,
+    "name": "Jindal pipes",
+    "slug": "jindal-pipes",
+    "sku": "TT-020",
+    "brand": "Jindal",
+    "description": "G.I pipes are widely used for the purpose of distribution of treated or raw water in rural areas. When it comes to projects that are larger in nature, GI Pipes are undoubtedly the best choice. This is because they are sturdy, durable, and are resistant to dust and abrasion.",
+    "specs": {
+      "Size": "1/2'-10'",
+      "Brand": "Jindal"
+    },
+    "categories": [
+      {
+        "name": "Pipes",
+        "slug": "pipes"
+      }
+    ],
+    "image": "assets/img/products/jindal-pipes.png",
+    "in_stock": true
+  },
+  {
+    "id": 2560,
+    "name": "Kestrel pipe & fittings metrialss",
+    "slug": "kestrel-pipe-fittings-metrialss",
+    "sku": "TT-053",
+    "brand": "Kestral",
+    "description": "KESTREL supplies best quality UPVC pipes and fittings which is lasting and quality merchandise. These pipes are employed in all sectors because they are reliable for life long. The merchandise is produced from excellent quality raw materials under the management of skilled specialists.",
+    "specs": {
+      "Size": "1/2",
+      "Brand": "Kestral",
+      "Grade": "SCH-40 / SCH - 80"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/kestrel-pipe-fittings-metrialss.png",
+    "in_stock": true
+  },
+  {
+    "id": 2877,
+    "name": "M II Turbo GM Cylinders",
+    "slug": "m-ii-turbo-gm-cylinders",
+    "sku": "",
+    "brand": "Turbo",
+    "description": "",
+    "specs": {
+      "Brand": "Turbo"
+    },
+    "categories": [
+      {
+        "name": "Hand Pump Spare Parts",
+        "slug": "hand-pump-spare-parts"
+      }
+    ],
+    "image": "assets/img/products/m-ii-turbo-gm-cylinders.png",
+    "in_stock": true
+  },
+  {
+    "id": 2846,
+    "name": "Mark-II Connecting Rod",
+    "slug": "mark-ii-connecting-rod",
+    "sku": "TT-097",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "2.4 Kgs"
+    },
+    "categories": [
+      {
+        "name": "Hand Pump Spare Parts",
+        "slug": "hand-pump-spare-parts"
+      }
+    ],
+    "image": "assets/img/products/mark-ii-connecting-rod.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2562,
+    "name": "Master quality hand tools",
+    "slug": "master-quality-hand-tools",
+    "sku": "TT-054",
+    "brand": "Master",
+    "description": "CHAIN TONS, SPARE CHAINS, SPARE JAWS, PIPE WRENCH. ALL KINDS OF HAND TOOLS AVAILABLE",
+    "specs": {
+      "Size": "2\"-8\"",
+      "Brand": "Master"
+    },
+    "categories": [
+      {
+        "name": "Hand Tools",
+        "slug": "hand-tools"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/master-quality-hand-tools.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2564,
+    "name": "MS & GI Flange",
+    "slug": "ms-gi-flange",
+    "sku": "TT-055",
+    "brand": "Tarak Tube",
+    "description": "",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Flange",
+        "slug": "flange"
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      }
+    ],
+    "image": "assets/img/products/ms-gi-flange.png",
+    "in_stock": true
+  },
+  {
+    "id": 2510,
+    "name": "Neoseal Prime Coat",
+    "slug": "neoseal-prime-coat",
+    "sku": "TT-028",
+    "brand": "Neoseal",
+    "description": "NeoSeal\u00ae N-504 PRIMER is a single component, high performance acrylic emulsion polymer based, flexible waterproof primer for interior and exterior building walls. It can be used as a waterproofing base coat prior to painting the building OR waterproofing the building using NeoSeal\u00ae Wall Coat and Terrance Coat. APPLICATION: Any interior and exterior building walls, roofs, chhajjas etc. Plastered walls, asbestos, concrete surface, bricks, falls ceiling etc. As a waterproofing base coat. COVERAGE: Coverage depends upon the nature of the surface to be applied. But on average, smooth surface will give approx. 85 to105 sq. ft. per litre per coats., DFT about 50 \u2013 60 microns.",
+    "specs": {
+      "Size": "1lts, 10lts, 20lts",
+      "Brand": "Neoseal"
+    },
+    "categories": [
+      {
+        "name": "Solvent Cement & Adhesives",
+        "slug": "solvent-cement-adhesives"
+      }
+    ],
+    "image": "assets/img/products/neoseal-prime-coat.png",
+    "in_stock": true
+  },
+  {
+    "id": 2518,
+    "name": "Nezone pipes",
+    "slug": "nezone-pipes",
+    "sku": "TT-032",
+    "brand": "Nezone",
+    "description": "G.I pipes are widely used for the purpose of distribution of treated or raw water in rural areas. When it comes to projects that are larger in nature, GI Pipes are undoubtedly the best choice. This is because they are sturdy, durable, and are resistant to dust and abrasion.",
+    "specs": {
+      "Size": "1/2'-10'",
+      "Brand": "Nezone"
+    },
+    "categories": [
+      {
+        "name": "Pipes",
+        "slug": "pipes"
+      }
+    ],
+    "image": "assets/img/products/nezone-pipes.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2767,
+    "name": "NIPPLE",
+    "slug": "nipple",
+    "sku": "TT-087",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2\" - 8\""
+    },
+    "categories": [
+      {
+        "name": "House Connection Fittings",
+        "slug": "house-connection-fittings"
+      }
+    ],
+    "image": "assets/img/products/nipple.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2520,
+    "name": "Nirva Ball Valves",
+    "slug": "nirva-ball-valves",
+    "sku": "TT-033",
+    "brand": "Nirva",
+    "description": "UPVC BALL VALVES SHORT HANDLE AND LONG HANDLE",
+    "specs": {
+      "Size": "1/2\"-4:",
+      "Brand": "Nirva"
+    },
+    "categories": [
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/nirva-ball-valves.png",
+    "in_stock": true
+  },
+  {
+    "id": 2637,
+    "name": "PARAS BATH FITTINGS",
+    "slug": "paras-bath-fittings-4",
+    "sku": "TT-078",
+    "brand": "Paras",
+    "description": "HEAD SHOWER",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/paras-bath-fittings-4.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2635,
+    "name": "PARAS BATH FITTINGS",
+    "slug": "paras-bath-fittings-3",
+    "sku": "TT-077",
+    "brand": "Paras",
+    "description": "SINK & BASIN BIB COCKS",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/paras-bath-fittings-3.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2631,
+    "name": "PARAS BATH FITTINGS",
+    "slug": "paras-bath-fittings-2",
+    "sku": "TT-074",
+    "brand": "Paras",
+    "description": "BRASS SINK BIB COCK",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/paras-bath-fittings-2.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2629,
+    "name": "PARAS BATH FITTINGS",
+    "slug": "paras-bath-fittings",
+    "sku": "TT-073",
+    "brand": "Paras",
+    "description": "BASIN PILLAR COCK",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/paras-bath-fittings.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2462,
+    "name": "Pillar, Nozzle & Long Body Bib cocks",
+    "slug": "pillar-nozzle-long-body-bib-cocks-2",
+    "sku": "TT-004",
+    "brand": "Atil",
+    "description": "PVC PILLAR COCK",
+    "specs": {
+      "Size": "1/2",
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/pillar-nozzle-long-body-bib-cocks-2.png",
+    "in_stock": true
+  },
+  {
+    "id": 2456,
+    "name": "Pillar, Nozzle & Long Body Bib cocks",
+    "slug": "pillar-nozzle-long-body-bib-cocks",
+    "sku": "TT-001",
+    "brand": "Atil",
+    "description": "PVC BIB COCK LONG BODY",
+    "specs": {
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/pillar-nozzle-long-body-bib-cocks.png",
+    "in_stock": true
+  },
+  {
+    "id": 2566,
+    "name": "Pipe Fittings",
+    "slug": "pipe-fittings",
+    "sku": "TT-056",
+    "brand": "Turbo",
+    "description": "HDPE pipe are made using polyethene which is a thermoplastic polymer consisting of long chains of ethylene or ethane, which offers great insulation properties. HDPE coil pipes is also the most versatile one. HDPE piping systems are also used in micro and sprinkler irrigation systems, water supply irrigation systems, sewerage & drainage pumping, telecom pipes, gas pipes, and other industrial projects. HDPE coil pipe allows smooth flow due to the best quality material and leakproof jointing.",
+    "specs": {
+      "Size": "20MM-315MM",
+      "Brand": "Turbo",
+      "Grade": "PN - 10"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/pipe-fittings.png",
+    "in_stock": true
+  },
+  {
+    "id": 2568,
+    "name": "Pipes",
+    "slug": "pipes",
+    "sku": "TT-057",
+    "brand": "Tarak Tube",
+    "description": "",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/pipes.png",
+    "in_stock": true
+  },
+  {
+    "id": 2839,
+    "name": "PP DIAPHRAGM VALVE FLANGE END",
+    "slug": "pp-diaphragm-valve-flange-end",
+    "sku": "TT-094",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2\"-4:"
+    },
+    "categories": [
+      {
+        "name": "PP INDUSTRIAL VALVES",
+        "slug": "pp-industrial-valves-valves"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/pp-diaphragm-valve-flange-end.jpeg",
+    "in_stock": true
+  },
+  {
+    "id": 2558,
+    "name": "PP FLANGED BALL VALVE",
+    "slug": "pp-flanged-ball-valve",
+    "sku": "TT-052",
+    "brand": "Turbo",
+    "description": "PP ball valves are commonly used in industries such as chemical processing, water treatment, agriculture, and pharmaceuticals, among others. They are preferred over other types of valves because of their low cost, easy maintenance, and high performance. They can withstand high pressures and temperatures, and are resistant to many chemicals, acids, and solvents. PP ball valves are also known for their excellent resistance to UV radiation and weathering, making them suitable for outdoor use. (PP) ball valve is a type of valve that is made from polypropylene material. It consists of a hollow ball with a hole in the center that rotates to control the flow of fluids or gases. The ball is held in place by a stem and two seats, which seal the valve when it is closed. The valve is designed to be durable, corrosion-resistant, and lightweight, making it an ideal choice for a wide range of industrial and commercial applications.",
+    "specs": {
+      "Size": "1/2\" - 8\"",
+      "Brand": "Turbo"
+    },
+    "categories": [
+      {
+        "name": "PP INDUSTRIAL VALVES",
+        "slug": "pp-industrial-valves"
+      }
+    ],
+    "image": "assets/img/products/pp-flanged-ball-valve.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2931,
+    "name": "PP FLOW INDICATOR VALVE",
+    "slug": "pp-flow-indicator-valve",
+    "sku": "TT-098",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2\" - 8\""
+    },
+    "categories": [
+      {
+        "name": "PP INDUSTRIAL VALVES",
+        "slug": "pp-industrial-valves-valves"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/pp-flow-indicator-valve.png",
+    "in_stock": true
+  },
+  {
+    "id": 2837,
+    "name": "PP FOOT VALVE FLANGE END",
+    "slug": "pp-foot-valve-flange-end",
+    "sku": "TT-093",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2\"-4:"
+    },
+    "categories": [
+      {
+        "name": "PP INDUSTRIAL VALVES",
+        "slug": "pp-industrial-valves-valves"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/pp-foot-valve-flange-end.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2600,
+    "name": "PP INDUSTRIAL VALVES",
+    "slug": "pp-industrial-valves",
+    "sku": "TT-084",
+    "brand": "Tarak Tube",
+    "description": "PP Industrial valves are used in chemical and petroleum industry, power plants , sugar industries, effluent treatment plants, cooling towers, oil industries, cement factories, drip irrigation etc",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/pp-industrial-valves.png",
+    "in_stock": true
+  },
+  {
+    "id": 2835,
+    "name": "PP NON RETURN VALVE FLANGE END",
+    "slug": "pp-non-return-valve-flange-end",
+    "sku": "TT-092",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2\" - 8\""
+    },
+    "categories": [
+      {
+        "name": "PP INDUSTRIAL VALVES",
+        "slug": "pp-industrial-valves-valves"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/pp-non-return-valve-flange-end.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2841,
+    "name": "PP Y STRAINER FLANGE TYPE",
+    "slug": "pp-y-strainer-flange-type",
+    "sku": "TT-095",
+    "brand": null,
+    "description": "",
+    "specs": {
+      "Size": "1/2\"-4:"
+    },
+    "categories": [
+      {
+        "name": "PP INDUSTRIAL VALVES",
+        "slug": "pp-industrial-valves-valves"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/pp-y-strainer-flange-type.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2498,
+    "name": "Premium Quality PTFE Tape \u2013 White",
+    "slug": "premium-quality-ptfe-tape-white",
+    "sku": "TT-022",
+    "brand": "Neoseal",
+    "description": "High density \u2013 Premium Quality. Self-Lubricating, non-hardening, non-toxic, non-flammable tape. Fills irregular voids between threads. Easy to assemble and disassemble. Offers positive pressure seal up to 3 ton (depending on material). Temperature rage from -265\u00b0C to +260\u00b0C. Meets US Federal Specification MIL \u2013 T \u2013 27730A.",
+    "specs": {
+      "Size": "12mm x 0.10mm x 10mtr",
+      "Brand": "Neoseal"
+    },
+    "categories": [
+      {
+        "name": "Solvent Cement & Adhesives",
+        "slug": "solvent-cement-adhesives"
+      }
+    ],
+    "image": "assets/img/products/premium-quality-ptfe-tape-white.png",
+    "in_stock": true
+  },
+  {
+    "id": 2633,
+    "name": "PTMT PILLAR COCK",
+    "slug": "ptmt-pillar-cock",
+    "sku": "TT-075",
+    "brand": "Paras",
+    "description": "",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/ptmt-pillar-cock.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2572,
+    "name": "PVC ANGLE COCK",
+    "slug": "pvc-angle-cock",
+    "sku": "TT-059",
+    "brand": "Atil",
+    "description": "ATIL MAKE",
+    "specs": {
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/pvc-angle-cock.png",
+    "in_stock": true
+  },
+  {
+    "id": 2765,
+    "name": "Pvc Ball Valve",
+    "slug": "pvc-ball-valve",
+    "sku": "TT-086",
+    "brand": "Trijal/ Nirva",
+    "description": "PVC BALL VALVES SHORT HANDLE AND LONG HANDLE",
+    "specs": {
+      "Size": "1/2\"-4:",
+      "Brand": "Trijal/ Nirva"
+    },
+    "categories": [
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/pvc-ball-valve.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2574,
+    "name": "PVC BIB COCK",
+    "slug": "pvc-bib-cock",
+    "sku": "TT-060",
+    "brand": "Atil",
+    "description": "SHORT BODY ATIL MAKE",
+    "specs": {
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/pvc-bib-cock.png",
+    "in_stock": true
+  },
+  {
+    "id": 2490,
+    "name": "Pvc Hand Pump \u2013 Clamp Type",
+    "slug": "pvc-hand-pump-clamp-type",
+    "sku": "TT-018",
+    "brand": "ATIL/JAVIA",
+    "description": "Plastic tubewell hand pumps are used to lift groundwater to the surface for drinking, cooking, and sanitation. They are often used in rural areas where resources are limited. These are mainly attached to the wall near the water source near the boring line.",
+    "specs": {
+      "Brand": "ATIL/JAVIA"
+    },
+    "categories": [
+      {
+        "name": "PVC Hand Pump",
+        "slug": "pvc-hand-pump"
+      }
+    ],
+    "image": "assets/img/products/pvc-hand-pump-clamp-type.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2492,
+    "name": "Pvc Hand Pump \u2013 FlangeType",
+    "slug": "pvc-hand-pump-flangetype",
+    "sku": "TT-019",
+    "brand": "ATIL/JAVIA",
+    "description": "Plastic tubewell hand pumps are used to lift groundwater to the surface for drinking, cooking, and sanitation. They are often used in rural areas where resources are limited. These are usually mounted on a plastic table and can be moved around after use.",
+    "specs": {
+      "Brand": "ATIL/JAVIA"
+    },
+    "categories": [
+      {
+        "name": "PVC Hand Pump",
+        "slug": "pvc-hand-pump"
+      }
+    ],
+    "image": "assets/img/products/pvc-hand-pump-flangetype.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2578,
+    "name": "PVC TEE COCK",
+    "slug": "pvc-tee-cock",
+    "sku": "TT-062",
+    "brand": "Atil",
+    "description": "",
+    "specs": {
+      "Size": "1/2",
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/pvc-tee-cock.png",
+    "in_stock": true
+  },
+  {
+    "id": 2576,
+    "name": "PVC WASTE PIPE",
+    "slug": "pvc-waste-pipe",
+    "sku": "TT-061",
+    "brand": "Atil",
+    "description": "BASIN PIPE OR MAGIC PIPE",
+    "specs": {
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/pvc-waste-pipe.png",
+    "in_stock": true
+  },
+  {
+    "id": 2506,
+    "name": "PVC-SOLVENT-CEMENT",
+    "slug": "pvc-solvent-cement",
+    "sku": "TT-026",
+    "brand": "Neoseal,Nirwell",
+    "description": "Regular bodied, slow setting, HIGH PRESSURE, high strength cement. Specially formulated for all types of ISI PVC irrigation piping systems. It provides long working time to make joints in a hot climate. It can be used for conduit, sewer, drain, waste and vent systems. Compliance with ISI \u2013 IS14182 standard. Brookfield Viscosity : Min. 90 cP. Store product below 44\u00b0C (111\u00b0F).",
+    "specs": {
+      "Size": "50ml, 100ml, 250ml, 500ml, 1lts, 5lts & 20lts",
+      "Brand": "Neoseal,Nirwell"
+    },
+    "categories": [
+      {
+        "name": "Solvent Cement & Adhesives",
+        "slug": "solvent-cement-adhesives"
+      }
+    ],
+    "image": "assets/img/products/pvc-solvent-cement.png",
+    "in_stock": true
+  },
+  {
+    "id": 2512,
+    "name": "Saral-Seal Rapid Cure",
+    "slug": "saral-seal-rapid-cure",
+    "sku": "TT-029",
+    "brand": "Neoseal",
+    "description": "Saral-Seal Rapid set Epoxy Putty compound is a two component room temperature curing, easy to use multi-purpose epoxy putty. Saral-Seal Rapid set is espically designed for quick repair applicant. It is ideal for industrial, electrical, automotive, grouting civil cracks, general & household, handicraft applications. Resin and hardener components are equally (1:1 ratio) mixed with both hands by rolling between two palms until a dark gray colour (like dried cement mortar) is attained. It will cure within 30 mins. @ 27\u2103.",
+    "specs": {
+      "Size": "25gms, 50gms, 100gms, 250gms, 1kgs",
+      "Brand": "Neoseal"
+    },
+    "categories": [
+      {
+        "name": "Solvent Cement & Adhesives",
+        "slug": "solvent-cement-adhesives"
+      }
+    ],
+    "image": "assets/img/products/saral-seal-rapid-cure.png",
+    "in_stock": true
+  },
+  {
+    "id": 2843,
+    "name": "Service Saddle",
+    "slug": "service-saddle",
+    "sku": "TT-096",
+    "brand": null,
+    "description": "",
+    "specs": {},
+    "categories": [
+      {
+        "name": "House Connection Fittings",
+        "slug": "house-connection-fittings"
+      }
+    ],
+    "image": "assets/img/products/service-saddle.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2470,
+    "name": "Sewerage / UDS Pipes",
+    "slug": "sewerage-uds-pipes",
+    "sku": "TT-008",
+    "brand": "FinOlex, APL Apollo",
+    "description": "Underground drainage & sewerage pipes are intended to carry soil and waste from building to sewers or drains and then to treatment plants or disposal points. Sewerage pipes come with selfit and ringfit sockets in a standard length of 3 & 6 meters. Selfit pipes are self-socketed and can be joined with the help of solvent cement; while Ringfit pipes need no threading or solvents for jointing and can withstand high pressures.",
+    "specs": {
+      "Size": "110MM - 315MM",
+      "Brand": "FinOlex, APL Apollo",
+      "Grade": "SN-2, SN-4, SN-8"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/sewerage-uds-pipes.png",
+    "in_stock": true
+  },
+  {
+    "id": 2586,
+    "name": "SHOWER",
+    "slug": "shower",
+    "sku": "TT-067",
+    "brand": "Paras",
+    "description": "",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/shower.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2460,
+    "name": "Sink & Swan Cocks",
+    "slug": "sink-swan-cocks-2",
+    "sku": "TT-003",
+    "brand": "Atil",
+    "description": "PVC SINK AND SWAN NECK",
+    "specs": {
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/sink-swan-cocks-2.png",
+    "in_stock": true
+  },
+  {
+    "id": 2458,
+    "name": "Sink & Swan Cocks",
+    "slug": "sink-swan-cocks",
+    "sku": "TT-002",
+    "brand": "Atil",
+    "description": "PVC SINK AND SWAN NECK",
+    "specs": {
+      "Brand": "Atil"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/sink-swan-cocks.png",
+    "in_stock": true
+  },
+  {
+    "id": 2880,
+    "name": "SS Cylinders",
+    "slug": "ss-cylinders",
+    "sku": "",
+    "brand": "Ajai Lion",
+    "description": "",
+    "specs": {
+      "Brand": "Ajai Lion"
+    },
+    "categories": [
+      {
+        "name": "Hand Pump Spare Parts",
+        "slug": "hand-pump-spare-parts"
+      }
+    ],
+    "image": "assets/img/products/ss-cylinders.png",
+    "in_stock": true
+  },
+  {
+    "id": 2496,
+    "name": "Standard Quality PTFE Taflon Tape",
+    "slug": "standard-quality-ptfe-taflon-tape",
+    "sku": "TT-021",
+    "brand": "Neoseal",
+    "description": "PTFE stands for polytetrafluoroethylene and is a synthetic fluoropolymer used widely in many industries and many other applications. PTFE is also commonly referred to as thread seal tape, teflon tape, and plumber\u2019s tape. Self-Lubricating, non-hardening, non-toxic, non-flammable tape. Fills irregular voids between threads. Easy to assemble and disassemble. Meets US Federal Specification MIL \u2013 T \u2013 27730A.",
+    "specs": {
+      "Size": "12mm x 0.085mm x 10mtr. (Standard)",
+      "Brand": "Neoseal"
+    },
+    "categories": [
+      {
+        "name": "Solvent Cement & Adhesives",
+        "slug": "solvent-cement-adhesives"
+      }
+    ],
+    "image": "assets/img/products/standard-quality-ptfe-taflon-tape.png",
+    "in_stock": true
+  },
+  {
+    "id": 2466,
+    "name": "Submersible/Column pipes",
+    "slug": "submersible-column-pipes",
+    "sku": "TT-006",
+    "brand": "Tuffplast, Utkarsh",
+    "description": "Female belled threads at one end and male threads on the other end (and/or with separate coupler) Pipes available in 3 metre length with square threads fitted with rubber sealing ring at male threaded end. Square threads for high tensile load capacity and leak-proof joints. Withstands pump, water, and pipe weight with safety factors. Can withstand considerable shocks and jerk load.",
+    "specs": {
+      "Size": "1\", 1 \u00bc \", 1 \u00bd \", 2\", 2\u00bd\", 3\", 4\"",
+      "Brand": "Tuffplast, Utkarsh",
+      "Grade": "9kg/cm2 - 25kg/cm2"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/submersible-column-pipes.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2472,
+    "name": "SWR Pipes & Fittings",
+    "slug": "swr-pipes-fittings",
+    "sku": "TT-009",
+    "brand": "FinOlex, Tuffplast, Utkarsh",
+    "description": "SWR pipes and fittings are specially designed and manufactured using high grade raw material and are an ideal solution for efficient removal of waste in the drainage system. SWR pipes and fittings are used for non-pressure plumbing applications, such as transportation of soil, waste and rainwater, non-pressure industrial drainage applications, and waste discharge systems in residential and commercial complexes, resorts, and hospitals.",
+    "specs": {
+      "Size": "75MM, 110MM, 160MM",
+      "Brand": "FinOlex, Tuffplast, Utkarsh",
+      "Grade": "TYPE A & TYPE B"
+    },
+    "categories": [
+      {
+        "name": "Pipes & Fittings",
+        "slug": "pipes-fittings"
+      }
+    ],
+    "image": "assets/img/products/swr-pipes-fittings.png",
+    "in_stock": true
+  },
+  {
+    "id": 2516,
+    "name": "Tata pipes",
+    "slug": "tata-pipes",
+    "sku": "TT-031",
+    "brand": "TATA",
+    "description": "G.I pipes are widely used for the purpose of distribution of treated or raw water in rural areas. When it comes to projects that are larger in nature, GI Pipes are undoubtedly the best choice. This is because they are sturdy, durable, and are resistant to dust and abrasion.",
+    "specs": {
+      "Size": "1/2'-10'",
+      "Brand": "TATA"
+    },
+    "categories": [
+      {
+        "name": "Pipes",
+        "slug": "pipes"
+      }
+    ],
+    "image": "assets/img/products/tata-pipes.png",
+    "in_stock": true
+  },
+  {
+    "id": 2584,
+    "name": "THREE IN ONE WALL MIXTURE",
+    "slug": "three-in-one-wall-mixture",
+    "sku": "TT-066",
+    "brand": "Paras",
+    "description": "",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/three-in-one-wall-mixture.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2522,
+    "name": "Trijal Ball Valves",
+    "slug": "trijal-ball-valves",
+    "sku": "TT-034",
+    "brand": "Trijal",
+    "description": "",
+    "specs": {
+      "Brand": "Trijal"
+    },
+    "categories": [
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "assets/img/products/trijal-ball-valves.png",
+    "in_stock": true
+  },
+  {
+    "id": 2874,
+    "name": "TTC Brass Cylinders",
+    "slug": "ttc-brass-cylinders",
+    "sku": "",
+    "brand": "Turbo",
+    "description": "",
+    "specs": {
+      "Brand": "Turbo",
+      "Size": "2.5\""
+    },
+    "categories": [
+      {
+        "name": "Hand Pump Spare Parts",
+        "slug": "hand-pump-spare-parts"
+      }
+    ],
+    "image": "assets/img/products/ttc-brass-cylinders.png",
+    "in_stock": true
+  },
+  {
+    "id": 2641,
+    "name": "TUFFPLAST",
+    "slug": "tuffplast",
+    "sku": "TT-081",
+    "brand": "Tarak Tube",
+    "description": "TUFFPLAST",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Materials",
+        "slug": "materials"
+      }
+    ],
+    "image": "assets/img/products/tuffplast.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2596,
+    "name": "TUFFPLAST PIPE AND FITTNGS",
+    "slug": "tuffplast-pipe-and-fittngs",
+    "sku": "TT-082",
+    "brand": "Tarak Tube",
+    "description": "",
+    "specs": {
+      "Brand": "Tarak Tube"
+    },
+    "categories": [
+      {
+        "name": "Materials",
+        "slug": "materials"
+      }
+    ],
+    "image": "assets/img/products/tuffplast-pipe-and-fittngs.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2502,
+    "name": "UPVC-ball-valves",
+    "slug": "upvc-ball-valves",
+    "sku": "TT-024",
+    "brand": "Neoseal. Nirva , Finolex",
+    "description": "Easily use these for managing irrigation of large farms and industrial irrigation needs. Long handle help to adopt sustainable measures and ensures protection against corrosion and ultraviolet radiation. M S Plate helps faster handling in the fields. High-Quality materials and equipped with powerful bolts. Can withstand 100 Psi pressure at 23C. 100% leakproof. Zero-maintenance. Corrosion-free. Easy Movement of Ball Valve handle. Meets ASTM F 1970 & ASTM D 2467.",
+    "specs": {
+      "Size": "1/2\"-4:",
+      "Brand": "Neoseal. Nirva , Finolex"
+    },
+    "categories": [
+      {
+        "name": "Ball Valves",
+        "slug": "ball-valves"
+      }
+    ],
+    "image": "assets/img/products/upvc-ball-valves.png",
+    "in_stock": true
+  },
+  {
+    "id": 2504,
+    "name": "UPVC-SOLVENT-CEMENT",
+    "slug": "upvc-solvent-cement",
+    "sku": "TT-025",
+    "brand": "Neoseal,Nirwell",
+    "description": "Medium bodied, fast setting, high strength Low VOC solvent cement. Designed for all grades and types of PVC, UPVC (PVC-U) pipe and fittings through 6\u201d (152mm) diameter Schedule 40 & 4\u201d (101mm) diameter Schedule 80 interference fit, PVC-U PN10 & 16. For potable water, plumbing, irrigation, conduit, sewer, drain, waste and vent systems. Primer is strongly recommended for pipe diameter> 3\u201d (76mm). Certified by NSF International for compliance with NSF/ANSI 14, NSF/ANSI 61 & ASTM D-2564. Meets SCAQMD Rule 1168/316A and Qualify for LEED\u00ae Green Building requirements. Brookfield Viscosity: Minimum 500 cP. Store product below 44\u00b0C (111\u00b0F).",
+    "specs": {
+      "Size": "59ml, 118ml, 237ml, 473ml & 946ml",
+      "Brand": "Neoseal,Nirwell"
+    },
+    "categories": [
+      {
+        "name": "Solvent Cement & Adhesives",
+        "slug": "solvent-cement-adhesives"
+      }
+    ],
+    "image": "assets/img/products/upvc-solvent-cement.png",
+    "in_stock": true
+  },
+  {
+    "id": 2588,
+    "name": "WALL BRASS TAPS",
+    "slug": "wall-brass-taps",
+    "sku": "TT-068",
+    "brand": "Paras",
+    "description": "",
+    "specs": {
+      "Brand": "Paras"
+    },
+    "categories": [
+      {
+        "name": "Bath Fittings",
+        "slug": "bath-fittings"
+      }
+    ],
+    "image": "assets/img/products/wall-brass-taps.jpg",
+    "in_stock": true
+  },
+  {
+    "id": 2570,
+    "name": "Water Storage tanks",
+    "slug": "water-storage-tanks",
+    "sku": "TT-058",
+    "brand": "Tuffplast, Oriplast",
+    "description": "A plastic water tank is a large capacity container designed to store water for household, agricultural, irrigation, and industrial manufacturing use. These come in various sizes such as 300L 500L,1000L,2000L & 5000L.",
+    "specs": {
+      "Brand": "Tuffplast, Oriplast"
+    },
+    "categories": [
+      {
+        "name": "Water Storage tanks",
+        "slug": "water-storage-tanks"
+      }
+    ],
+    "image": "assets/img/products/water-storage-tanks.png",
+    "in_stock": true
+  }
+]

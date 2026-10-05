@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Accessories",
+    "slug": "accessories",
+    "count": 8,
+    "image": "assets/img/categories/accessories.png"
+  },
+  {
+    "name": "Adaptor",
+    "slug": "adaptor",
+    "count": 1,
+    "image": "assets/img/products/cast-iron-adaptor.png"
+  },
+  {
+    "name": "Ball Valves",
+    "slug": "ball-valves",
+    "count": 2,
+    "image": "assets/img/products/cpvc-ball-valves.png"
+  },
+  {
+    "name": "Bath Fittings",
+    "slug": "bath-fittings",
+    "count": 19,
+    "image": "assets/img/products/basin-pillar-cock.jpg"
+  },
+  {
+    "name": "Brass Bibcock",
+    "slug": "brass-bibcock",
+    "count": 1,
+    "image": "assets/img/products/brass-bibcock.jpg"
+  },
+  {
+    "name": "Caps",
+    "slug": "caps",
+    "count": 1,
+    "image": "assets/img/products/g-i-oil-well-caps.png"
+  },
+  {
+    "name": "Cast-Iron Hand Pump",
+    "slug": "cast-iron-hand-pump",
+    "count": 4,
+    "image": "assets/img/products/boring-head.png"
+  },
+  {
+    "name": "Clamps",
+    "slug": "clamps",
+    "count": 1,
+    "image": "assets/img/products/g-i-pipe-clamps.png"
+  },
+  {
+    "name": "Crack filler paste",
+    "slug": "crack-filler-paste",
+    "count": 1,
+    "image": "assets/img/products/crack-filler-paste.png"
+  },
+  {
+    "name": "Flange",
+    "slug": "flange",
+    "count": 1,
+    "image": "assets/img/products/ms-gi-flange.png"
+  },
+  {
+    "name": "G.I. fittings",
+    "slug": "g-i-fittings",
+    "count": 4,
+    "image": "assets/img/products/b-p-bends.png"
+  },
+  {
+    "name": "Hand Pump",
+    "slug": "hand-pump",
+    "count": 3,
+    "image": "assets/img/categories/hand-pump.jpg"
+  },
+  {
+    "name": "Hand Pump Spare Parts",
+    "slug": "hand-pump-spare-parts",
+    "count": 4,
+    "image": "assets/img/products/m-ii-turbo-gm-cylinders.png"
+  },
+  {
+    "name": "Hand Tools",
+    "slug": "hand-tools",
+    "count": 1,
+    "image": "assets/img/products/master-quality-hand-tools.jpg"
+  },
+  {
+    "name": "HDPE Ball valve",
+    "slug": "hdpe-ball-valve",
+    "count": 1,
+    "image": "assets/img/products/hdpe-ball-valve.jpg"
+  },
+  {
+    "name": "HDPE Brass MTA",
+    "slug": "hdpe-brass-mta",
+    "count": 1,
+    "image": "assets/img/products/hdpe-brass-mta.jpg"
+  },
+  {
+    "name": "HDPE Welding Machine",
+    "slug": "welding-machine",
+    "count": 1,
+    "image": "assets/img/products/hdpe-manual-butt-welding-machine.png"
+  },
+  {
+    "name": "House Connection Fittings",
+    "slug": "house-connection-fittings",
+    "count": 5,
+    "image": "assets/img/categories/house-connection-fittings.jpg"
+  },
+  {
+    "name": "Materials",
+    "slug": "materials",
+    "count": 5,
+    "image": "assets/img/products/eagle-hand-tools.png"
+  },
+  {
+    "name": "Pipes",
+    "slug": "pipes",
+    "count": 3,
+    "image": "assets/img/products/jindal-pipes.png"
+  },
+  {
+    "name": "Pipes & Fittings",
+    "slug": "pipes-fittings",
+    "count": 13,
+    "image": "assets/img/categories/pipes-fittings.png"
+  },
+  {
+    "name": "PP INDUSTRIAL VALVES",
+    "slug": "pp-industrial-valves-valves",
+    "count": 5,
+    "image": "assets/img/products/pp-diaphragm-valve-flange-end.jpeg"
+  },
+  {
+    "name": "PP INDUSTRIAL VALVES",
+    "slug": "pp-industrial-valves",
+    "count": 1,
+    "image": "assets/img/categories/pp-industrial-valves.jpeg"
+  },
+  {
+    "name": "PVC Hand Pump",
+    "slug": "pvc-hand-pump",
+    "count": 2,
+    "image": "assets/img/categories/pvc-hand-pump.png"
+  },
+  {
+    "name": "Solvent Cement & Adhesives",
+    "slug": "solvent-cement-adhesives",
+    "count": 7,
+    "image": "assets/img/categories/solvent-cement-adhesives.jpg"
+  },
+  {
+    "name": "Toolkit",
+    "slug": "toolkit",
+    "count": 2,
+    "image": "assets/img/products/india-m-ii-toolkit.png"
+  },
+  {
+    "name": "Valves",
+    "slug": "valves",
+    "count": 11,
+    "image": "assets/img/categories/valves.png"
+  },
+  {
+    "name": "Water Storage tanks",
+    "slug": "water-storage-tanks",
+    "count": 1,
+    "image": "assets/img/categories/water-storage-tanks.png"
+  }
+]

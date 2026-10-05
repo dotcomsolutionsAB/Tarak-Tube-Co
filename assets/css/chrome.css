@@ -1,0 +1,255 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.header-inner {
+  min-height: var(--header-h);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.brand img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  background: var(--white);
+  border-radius: 50%;
+  transform: scale(1.25);
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.search-form {
+  display: flex;
+  background: var(--white);
+  border-radius: 999px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.search-form input {
+  flex: 1;
+  border: 0;
+  padding: 12px 18px;
+  color: var(--ink);
+  min-width: 0;
+  outline: none;
+}
+
+.search-form button {
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.desktop-nav {
+  display: none;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.desktop-nav .container {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  min-height: 52px;
+}
+
+.desktop-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.is-active { color: var(--blue); }
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 16, 32, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 50;
+}
+
+.drawer.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-panel {
+  width: min(360px, 88vw);
+  height: 100%;
+  background: var(--white);
+  color: var(--ink);
+  padding: 20px;
+  overflow: auto;
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.18);
+}
+.drawer-panel > button {
+  border: 0;
+  background: var(--surface);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.drawer-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.drawer-tabs button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.drawer-tabs button.is-active {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+
+.drawer-list { display: none; }
+.drawer-list.is-active { display: block; }
+.drawer-list a,
+.drawer-list summary {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.drawer details a {
+  padding-left: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.site-footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 56px 0 24px;
+  margin-top: 56px;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 32px;
+}
+
+.site-footer h4 {
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.site-footer p,
+.site-footer li { font-size: 14px; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li + li { margin-top: 8px; }
+.site-footer a:hover { color: var(--white); }
+
+.legal {
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid #2a3344;
+  font-size: 13px;
+}
+
+.whatsapp-fab {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 30;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow);
+}
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 16, 32, 0.5);
+  z-index: 60;
+  display: none;
+  padding: 10vh 16px 16px;
+}
+
+.search-overlay.is-open { display: block; }
+
+.search-panel {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 18px;
+  max-height: 80vh;
+  overflow: auto;
+  color: var(--ink);
+}
+.search-panel button {
+  border: 0;
+  background: var(--surface);
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.search-results a {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.search-results img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  background: var(--surface);
+}
+
+@media (min-width: 900px) {
+  .desktop-nav { display: block; }
+  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+}

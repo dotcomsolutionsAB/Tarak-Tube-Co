@@ -1,0 +1,45 @@
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./">
+      <img src="./assets/img/logo.png" alt="Tarak Tube Co.">
+      <span class="brand-name">Tarak Tube Co.</span>
+    </a>
+    <form class="search-form" data-search-form action="./shop/" method="get">
+      <label class="sr-only" for="q">Search for products</label>
+      <input id="q" name="q" type="search" placeholder="Search for products" required>
+      <button type="submit" aria-label="Search">&#128269;</button>
+    </form>
+    <button class="menu-toggle" type="button" data-open-drawer aria-label="Open mobile menu">&#9776;</button>
+  </div>
+</header>
+<nav class="desktop-nav">
+  <div class="container">
+    <a href="./" data-nav>Home</a>
+    <a href="./about-us/" data-nav>About us</a>
+    <a href="./shop/" data-nav>Products</a>
+    <a href="./contact-us/" data-nav>Contact Us</a>
+  </div>
+</nav>
+<div class="drawer" data-drawer>
+  <div class="drawer-panel">
+    <button type="button" data-close-drawer>Close</button>
+    <div class="drawer-tabs">
+      <button type="button" class="is-active" data-drawer-tab="menu">Menu</button>
+      <button type="button" data-drawer-tab="categories">Categories</button>
+    </div>
+    <div class="drawer-list is-active" data-drawer-panel="menu">
+      <a href="./" data-nav>Home</a>
+      <a href="./about-us/" data-nav>About us</a>
+      <a href="./shop/" data-nav>Products</a>
+      <a href="./contact-us/" data-nav>Contact Us</a>
+    </div>
+    <div class="drawer-list" data-drawer-panel="categories"><details><summary>Pipes &amp; Fittings</summary><a href="./product-category/pipes-fittings/">View Pipes &amp; Fittings</a></details><details><summary>Valves</summary><a href="./product-category/valves/">View Valves</a></details><details><summary>Bath Fittings</summary><a href="./product-category/bath-fittings/">View Bath Fittings</a></details><details><summary>Hand Pump</summary><a href="./product-category/hand-pump/">View Hand Pump</a></details><details><summary>PVC Hand Pump</summary><a href="./product-category/pvc-hand-pump/">View PVC Hand Pump</a></details><details><summary>Solvent Cement</summary><a href="./product-category/solvent-cement-adhesives/">View Solvent Cement</a></details><details><summary>House Connection</summary><a href="./product-category/house-connection-fittings/">View House Connection</a></details><details><summary>Water Storage Tanks</summary><a href="./product-category/water-storage-tanks/">View Water Storage Tanks</a></details><details><summary>G.I. Fittings</summary><a href="./product-category/g-i-fittings/">View G.I. Fittings</a></details><details><summary>Pipes</summary><a href="./product-category/pipes/">View Pipes</a></details><details><summary>Hand Pump Spare Parts</summary><a href="./product-category/hand-pump-spare-parts/">View Hand Pump Spare Parts</a></details><details><summary>Accessories</summary><a href="./product-category/accessories/">View Accessories</a></details></div>
+  </div>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-panel">
+    <button type="button" data-close-search>Close</button>
+    <div class="search-results" data-search-results></div>
+  </div>
+</div>
