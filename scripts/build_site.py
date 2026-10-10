@@ -7,6 +7,7 @@ the committed data/products.json, so pages can be regenerated on any machine.
 
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import re
@@ -492,6 +493,12 @@ def footer_html(root: str) -> str:
 """
 
 
+def asset(root: str, rel: str) -> str:
+    """Link to a CSS/JS file with a content hash so browsers never serve a stale copy."""
+    digest = hashlib.md5((ROOT / rel).read_bytes()).hexdigest()[:8]
+    return f"{root}{rel}?v={digest}"
+
+
 def page_shell(title: str, root: str, body: str, active: str = "", description: str = "") -> str:
     description = description or "Tarak Tube Co., Kolkata — wholesale supplier of pipes, fittings, valves, hand pumps and bath fittings since 1993."
     return f"""<!DOCTYPE html>
@@ -506,18 +513,18 @@ def page_shell(title: str, root: str, body: str, active: str = "", description: 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="{root}assets/img/logo.png">
   <script>document.documentElement.classList.add("js")</script>
-  <link rel="stylesheet" href="{root}assets/css/tokens.css">
-  <link rel="stylesheet" href="{root}assets/css/chrome.css">
-  <link rel="stylesheet" href="{root}assets/css/pages.css">
+  <link rel="stylesheet" href="{asset(root, "assets/css/tokens.css")}">
+  <link rel="stylesheet" href="{asset(root, "assets/css/chrome.css")}">
+  <link rel="stylesheet" href="{asset(root, "assets/css/pages.css")}">
 </head>
 <body>
 {header_html(root, active)}
 <main>{body}</main>
 {cta_html(root)}
 {footer_html(root)}
-<script src="{root}assets/js/include.js"></script>
-<script src="{root}assets/js/main.js"></script>
-<script src="{root}assets/js/search.js"></script>
+<script src="{asset(root, "assets/js/include.js")}"></script>
+<script src="{asset(root, "assets/js/main.js")}"></script>
+<script src="{asset(root, "assets/js/search.js")}"></script>
 </body>
 </html>
 """
