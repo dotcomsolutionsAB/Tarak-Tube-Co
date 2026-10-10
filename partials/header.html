@@ -8,38 +8,45 @@
     <form class="search-form" data-search-form action="./shop/" method="get">
       <label class="sr-only" for="q">Search for products</label>
       <input id="q" name="q" type="search" placeholder="Search for products" required>
-      <button type="submit" aria-label="Search">&#128269;</button>
+      <button type="submit" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
     </form>
-    <button class="menu-toggle" type="button" data-open-drawer aria-label="Open mobile menu">&#9776;</button>
+    <button class="menu-toggle" type="button" data-open-drawer aria-label="Open mobile menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
   </div>
 </header>
 <nav class="desktop-nav">
   <div class="container">
     <a href="./" data-nav>Home</a>
-    <a href="./about-us/" data-nav>About us</a>
+    <a href="./about-us/" data-nav>About Us</a>
     <a href="./shop/" data-nav>Products</a>
     <a href="./contact-us/" data-nav>Contact Us</a>
+    <a class="nav-cta" href="tel:+919831721718"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> +91 98317 21718</a>
   </div>
 </nav>
 <div class="drawer" data-drawer>
   <div class="drawer-panel">
-    <button type="button" data-close-drawer>Close</button>
+    <div class="drawer-head">
+      <strong>Menu</strong>
+      <button type="button" data-close-drawer aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
     <div class="drawer-tabs">
-      <button type="button" class="is-active" data-drawer-tab="menu">Menu</button>
+      <button type="button" class="is-active" data-drawer-tab="menu">Pages</button>
       <button type="button" data-drawer-tab="categories">Categories</button>
     </div>
     <div class="drawer-list is-active" data-drawer-panel="menu">
       <a href="./" data-nav>Home</a>
-      <a href="./about-us/" data-nav>About us</a>
+      <a href="./about-us/" data-nav>About Us</a>
       <a href="./shop/" data-nav>Products</a>
       <a href="./contact-us/" data-nav>Contact Us</a>
     </div>
-    <div class="drawer-list" data-drawer-panel="categories"><details><summary>Pipes &amp; Fittings</summary><a href="./product-category/pipes-fittings/">View Pipes &amp; Fittings</a></details><details><summary>Valves</summary><a href="./product-category/valves/">View Valves</a></details><details><summary>Bath Fittings</summary><a href="./product-category/bath-fittings/">View Bath Fittings</a></details><details><summary>Hand Pump</summary><a href="./product-category/hand-pump/">View Hand Pump</a></details><details><summary>PVC Hand Pump</summary><a href="./product-category/pvc-hand-pump/">View PVC Hand Pump</a></details><details><summary>Solvent Cement</summary><a href="./product-category/solvent-cement-adhesives/">View Solvent Cement</a></details><details><summary>House Connection</summary><a href="./product-category/house-connection-fittings/">View House Connection</a></details><details><summary>Water Storage Tanks</summary><a href="./product-category/water-storage-tanks/">View Water Storage Tanks</a></details><details><summary>G.I. Fittings</summary><a href="./product-category/g-i-fittings/">View G.I. Fittings</a></details><details><summary>Pipes</summary><a href="./product-category/pipes/">View Pipes</a></details><details><summary>Hand Pump Spare Parts</summary><a href="./product-category/hand-pump-spare-parts/">View Hand Pump Spare Parts</a></details><details><summary>Accessories</summary><a href="./product-category/accessories/">View Accessories</a></details></div>
+    <div class="drawer-list" data-drawer-panel="categories"><a href="./product-category/pipes-fittings/">Pipes &amp; Fittings</a><a href="./product-category/valves/">Valves</a><a href="./product-category/bath-fittings/">Bath Fittings</a><a href="./product-category/hand-pump/">Hand Pump</a><a href="./product-category/pvc-hand-pump/">PVC Hand Pump</a><a href="./product-category/solvent-cement-adhesives/">Solvent Cement</a><a href="./product-category/house-connection-fittings/">House Connection</a><a href="./product-category/water-storage-tanks/">Water Storage Tanks</a><a href="./product-category/g-i-fittings/">G.I. Fittings</a><a href="./product-category/pipes/">Pipes</a><a href="./product-category/hand-pump-spare-parts/">Hand Pump Spare Parts</a><a href="./product-category/accessories/">Accessories</a></div>
   </div>
 </div>
 <div class="search-overlay" data-search-overlay>
   <div class="search-panel">
-    <button type="button" data-close-search>Close</button>
+    <div class="search-panel-head">
+      <strong>Search results</strong>
+      <button type="button" data-close-search aria-label="Close search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
     <div class="search-results" data-search-results></div>
   </div>
 </div>

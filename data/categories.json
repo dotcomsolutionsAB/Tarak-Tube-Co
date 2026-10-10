@@ -36,7 +36,7 @@
     "image": "assets/img/products/g-i-oil-well-caps.png"
   },
   {
-    "name": "Cast-Iron Hand Pump",
+    "name": "Cast Iron Hand Pump",
     "slug": "cast-iron-hand-pump",
     "count": 4,
     "image": "assets/img/products/boring-head.png"
@@ -48,7 +48,7 @@
     "image": "assets/img/products/g-i-pipe-clamps.png"
   },
   {
-    "name": "Crack filler paste",
+    "name": "Crack Filler Paste",
     "slug": "crack-filler-paste",
     "count": 1,
     "image": "assets/img/products/crack-filler-paste.png"
@@ -60,7 +60,7 @@
     "image": "assets/img/products/ms-gi-flange.png"
   },
   {
-    "name": "G.I. fittings",
+    "name": "G.I. Fittings",
     "slug": "g-i-fittings",
     "count": 4,
     "image": "assets/img/products/b-p-bends.png"
@@ -84,7 +84,7 @@
     "image": "assets/img/products/master-quality-hand-tools.jpg"
   },
   {
-    "name": "HDPE Ball valve",
+    "name": "HDPE Ball Valve",
     "slug": "hdpe-ball-valve",
     "count": 1,
     "image": "assets/img/products/hdpe-ball-valve.jpg"
@@ -126,13 +126,13 @@
     "image": "assets/img/categories/pipes-fittings.png"
   },
   {
-    "name": "PP INDUSTRIAL VALVES",
+    "name": "PP Industrial Valves",
     "slug": "pp-industrial-valves-valves",
     "count": 5,
     "image": "assets/img/products/pp-diaphragm-valve-flange-end.jpeg"
   },
   {
-    "name": "PP INDUSTRIAL VALVES",
+    "name": "PP Industrial Valves",
     "slug": "pp-industrial-valves",
     "count": 1,
     "image": "assets/img/categories/pp-industrial-valves.jpeg"
@@ -162,7 +162,7 @@
     "image": "assets/img/categories/valves.png"
   },
   {
-    "name": "Water Storage tanks",
+    "name": "Water Storage Tanks",
     "slug": "water-storage-tanks",
     "count": 1,
     "image": "assets/img/categories/water-storage-tanks.png"

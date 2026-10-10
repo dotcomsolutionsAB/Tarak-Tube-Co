@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Build catalog data, download images, and generate static pages."""
+"""Build catalog data, download images, and generate static pages.
+
+When the raw WooCommerce export (RAW) is not available, the build falls back to
+the committed data/products.json, so pages can be regenerated on any machine.
+"""
 
 from __future__ import annotations
 
@@ -52,6 +56,14 @@ HOME_INTRO = (
     "Apart from these products, we also offer a wide range of other products, such as CI Bib Cocks, "
     "Stop Cocks, Brass Ferrules, GI pipes & Fittings, PVC Garden Pipes, CP fittings and the list goes on."
 )
+PARTNER_BRANDS = ["Finolex", "Oriplast", "Tuffplast", "Supreme Gold", "APL Apollo", "Neoseal", "Astral"]
+CLIENT_GROUPS = ["Merlin", "Srijan", "Ekta", "Ideal"]
+PHONE_1 = "+919831721718"
+PHONE_2 = "+919831721719"
+EMAIL = "taraktubeco@gmail.com"
+ADDRESS = "30, Strand Road, Beside Jessop Company, Opposite Armenian Ghat, Kolkata - 700001"
+WHATSAPP = "https://wa.me/919831721718"
+MAP_QUERY = "Tarak Tube Co, 30 Strand Road, Kolkata 700001"
 
 ACCESSORY_SLUGS = {
     "adaptor",
@@ -117,6 +129,130 @@ EXTRA_IMAGES = {
     "hero-paras.jpg": "https://taraktubeco.com/wp-content/uploads/2024/08/Bath-Faucets19.jpg",
 }
 
+# ---------------------------------------------------------------------------
+# Naming cleanup: the WooCommerce export mixes ALL CAPS, slugs and typos.
+# ---------------------------------------------------------------------------
+
+ACRONYMS = {
+    "PVC", "CPVC", "UPVC", "HDPE", "ASTM", "SWR", "UDS", "NRV", "PN", "MTA", "PP", "PTFE",
+    "PTMT", "TTC", "MS", "GI", "SS", "GM", "MII", "II", "M", "Y", "CI", "SCH", "APL",
+}
+SMALL_WORDS = {"and", "in", "of", "for", "with", "to"}
+NAME_FIXES = {
+    "Kestrel pipe & fittings metrialss": "Kestrel Pipes & Fittings",
+    "TUFFPLAST PIPE AND FITTNGS": "Tuffplast Pipes & Fittings",
+    "Pvc Hand Pump – FlangeType": "PVC Hand Pump – Flange Type",
+    "Standard Quality PTFE Taflon Tape": "Standard Quality PTFE Teflon Tape",
+    "THREE IN ONE WALL MIXTURE": "Three-in-One Wall Mixer",
+    "PP Y STRAINER FLANGE TYPE": "PP Y-Strainer Flange Type",
+    "HOUSE CONNECTIONS FITTINGS": "House Connection Fittings",
+}
+BRAND_CANON = {
+    "finolex": "Finolex",
+    "aplapollo": "APL Apollo",
+    "apl apollo": "APL Apollo",
+    "tuffplast": "Tuffplast",
+    "neo seal": "Neoseal",
+    "neoseal": "Neoseal",
+    "kestral": "Kestrel",
+    "tata": "Tata",
+    "atil": "Atil",
+    "javia": "Javia",
+}
+
+
+def title_word(word: str, first: bool = True) -> str:
+    m = re.match(r"^([(\[]*)(.*?)([)\],.:]*)$", word)
+    pre, mid, post = m.groups()
+    if not mid:
+        return word
+    if not first and mid.lower() in SMALL_WORDS:
+        mid = mid.lower()
+    elif re.fullmatch(r"[A-Za-z](\.[A-Za-z])+\.?", mid + post):
+        mid, post = (mid + post).upper().rstrip(".") + ".", ""
+    elif "-" in mid:
+        mid = "-".join(title_word(part, i == 0) for i, part in enumerate(mid.split("-")))
+    elif mid.upper() in ACRONYMS:
+        mid = mid.upper()
+    elif any(ch.isdigit() for ch in mid):
+        pass
+    else:
+        mid = mid[:1].upper() + mid[1:].lower()
+    return pre + mid + post
+
+
+def clean_name(name: str) -> str:
+    name = (name or "").strip()
+    if name in NAME_FIXES:
+        return NAME_FIXES[name]
+    if " " not in name and "-" in name:
+        name = name.replace("-", " ")
+    name = re.sub(r"cast-iron", "Cast Iron", name, flags=re.I)
+    name = re.sub(r"\s*/\s*", " / ", name)
+    name = re.sub(r"\s+and\s+", " & ", name, flags=re.I)
+    return " ".join(title_word(w, i == 0) for i, w in enumerate(name.split()))
+
+
+def clean_brand(value: str) -> str:
+    if not value:
+        return ""
+    out = []
+    for part in re.split(r"\s*(?:,|/|\.\s)\s*", value):
+        part = part.strip(" .")
+        if not part:
+            continue
+        canon = BRAND_CANON.get(part.lower())
+        if not canon:
+            canon = part.title() if part.isupper() and len(part) > 3 else part
+        if canon not in out:
+            out.append(canon)
+    return ", ".join(out)
+
+
+def normalize(products: list[dict]) -> list[dict]:
+    for product in products:
+        product["name"] = clean_name(product["name"])
+        product["brand"] = clean_brand(product.get("brand") or "")
+        if "Brand" in product["specs"]:
+            product["specs"]["Brand"] = clean_brand(product["specs"]["Brand"])
+        for cat in product["categories"]:
+            cat["name"] = clean_name(cat["name"])
+    products.sort(key=lambda p: p["name"].lower())
+    return products
+
+
+def plural(n: int, word: str = "product") -> str:
+    return f"{n} {word}{'' if n == 1 else 's'}"
+
+
+def esc(value: str) -> str:
+    return html.escape(value or "")
+
+
+# ---------------------------------------------------------------------------
+# Icons
+# ---------------------------------------------------------------------------
+
+def icon(name: str, size: int = 18) -> str:
+    paths = {
+        "arrow": '<path d="M5 12h14M13 6l6 6-6 6"/>',
+        "phone": '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
+        "mail": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+        "pin": '<path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>',
+        "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+        "check": '<path d="m5 12 4.5 4.5L19 7"/>',
+        "close": '<path d="M6 6l12 12M18 6 6 18"/>',
+        "prev": '<path d="m15 6-6 6 6 6"/>',
+        "next": '<path d="m9 6 6 6-6 6"/>',
+    }
+    return (
+        f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+        f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths[name]}</svg>'
+    )
+
+
+WA_ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 17.7L1 23l5.4-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3.2.7.7-3.1-.2-.3A9 9 0 1 1 12 20.5zm5-6.7c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.3-.4.1-.3c0-.1 0-.3-.1-.4s-.6-1.4-.8-1.9-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.2.9 2.3c.1.2 1.6 2.5 3.8 3.4s2.1.6 2.8.5 1.6-.7 1.8-1.3.2-1.2.1-1.3-.2-.2-.5-.3z"/></svg>'
+
 
 def clean_text(value: str) -> str:
     if not value:
@@ -148,6 +284,13 @@ def download(url: str, dest: Path) -> bool:
 
 
 def load_products() -> list[dict]:
+    if not RAW.exists():
+        print(f"Raw export not found, rebuilding from data/products.json")
+        products = json.loads((ROOT / "data/products.json").read_text())
+        for product in products:
+            product.setdefault("source_image", "")
+        return normalize(products)
+
     raw = json.loads(RAW.read_text())
     products = []
     for item in raw:
@@ -186,8 +329,7 @@ def load_products() -> list[dict]:
                 "in_stock": bool(item.get("is_in_stock", True)),
             }
         )
-    products.sort(key=lambda p: p["name"].lower())
-    return products
+    return normalize(products)
 
 
 def build_categories(products: list[dict]) -> list[dict]:
@@ -227,13 +369,8 @@ def header_html(root: str, active: str = "") -> str:
         cls = ' class="is-active"' if active == key else ""
         return f'<a href="{root}{href}" data-nav{cls}>{label}</a>'
 
-    cat_links = "".join(
-        f'<a href="{root}product-category/{slug}/">{html.escape(name)}</a>'
-        for name, slug in NAV_CATEGORIES
-    )
     mega = "".join(
-        f"<details><summary>{html.escape(name)}</summary>"
-        f'<a href="{root}product-category/{slug}/">View {html.escape(name)}</a></details>'
+        f'<a href="{root}product-category/{slug}/">{esc(name)}</a>'
         for name, slug in NAV_CATEGORIES
     )
     return f"""
@@ -246,29 +383,33 @@ def header_html(root: str, active: str = "") -> str:
     <form class="search-form" data-search-form action="{root}shop/" method="get">
       <label class="sr-only" for="q">Search for products</label>
       <input id="q" name="q" type="search" placeholder="Search for products" required>
-      <button type="submit" aria-label="Search">&#128269;</button>
+      <button type="submit" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
     </form>
-    <button class="menu-toggle" type="button" data-open-drawer aria-label="Open mobile menu">&#9776;</button>
+    <button class="menu-toggle" type="button" data-open-drawer aria-label="Open mobile menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
   </div>
 </header>
 <nav class="desktop-nav">
   <div class="container">
     {nav("", "Home", "home")}
-    {nav("about-us/", "About us", "about")}
+    {nav("about-us/", "About Us", "about")}
     {nav("shop/", "Products", "shop")}
     {nav("contact-us/", "Contact Us", "contact")}
+    <a class="nav-cta" href="tel:{PHONE_1}">{icon("phone", 15)} +91 98317 21718</a>
   </div>
 </nav>
 <div class="drawer" data-drawer>
   <div class="drawer-panel">
-    <button type="button" data-close-drawer>Close</button>
+    <div class="drawer-head">
+      <strong>Menu</strong>
+      <button type="button" data-close-drawer aria-label="Close menu">{icon("close", 20)}</button>
+    </div>
     <div class="drawer-tabs">
-      <button type="button" class="is-active" data-drawer-tab="menu">Menu</button>
+      <button type="button" class="is-active" data-drawer-tab="menu">Pages</button>
       <button type="button" data-drawer-tab="categories">Categories</button>
     </div>
     <div class="drawer-list is-active" data-drawer-panel="menu">
       {nav("", "Home", "home")}
-      {nav("about-us/", "About us", "about")}
+      {nav("about-us/", "About Us", "about")}
       {nav("shop/", "Products", "shop")}
       {nav("contact-us/", "Contact Us", "contact")}
     </div>
@@ -277,24 +418,45 @@ def header_html(root: str, active: str = "") -> str:
 </div>
 <div class="search-overlay" data-search-overlay>
   <div class="search-panel">
-    <button type="button" data-close-search>Close</button>
+    <div class="search-panel-head">
+      <strong>Search results</strong>
+      <button type="button" data-close-search aria-label="Close search">{icon("close", 20)}</button>
+    </div>
     <div class="search-results" data-search-results></div>
   </div>
 </div>
 """
 
 
+def cta_html(root: str) -> str:
+    return f"""
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow light">Bulk &amp; project supply</p>
+      <h2>Need pipes, fittings or valves for your project?</h2>
+      <p>Share your requirement and our team will get back with availability and the best pricing.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn light" href="{WHATSAPP}" target="_blank" rel="noopener">{WA_ICON} WhatsApp Us</a>
+      <a class="btn outline-light" href="{root}contact-us/">Get a Quote</a>
+    </div>
+  </div>
+</section>
+"""
+
+
 def footer_html(root: str) -> str:
     cats = "".join(
-        f'<li><a href="{root}product-category/{slug}/">{html.escape(name)}</a></li>'
+        f'<li><a href="{root}product-category/{slug}/">{esc(name)}</a></li>'
         for name, slug in NAV_CATEGORIES[:6]
     )
     return f"""
 <footer class="site-footer">
   <div class="container footer-grid">
-    <div>
-      <h4>Tarak Tube Co.</h4>
-      <p>{html.escape(COMPANY)}</p>
+    <div class="footer-about">
+      <a class="footer-brand" href="{root}"><img src="{root}assets/img/logo.png" alt=""> <span>Tarak Tube Co.</span></a>
+      <p>{esc(COMPANY)}</p>
     </div>
     <div>
       <h4>Quick Links</h4>
@@ -304,38 +466,46 @@ def footer_html(root: str) -> str:
         <li><a href="{root}shop/">Products</a></li>
         <li><a href="{root}contact-us/">Contact Us</a></li>
       </ul>
-      <h4>Product Categories</h4>
+    </div>
+    <div>
+      <h4>Categories</h4>
       <ul>{cats}<li><a href="{root}shop/">All Products</a></li></ul>
     </div>
     <div>
-      <h4>Location Address</h4>
-      <p>Know where to find us? Let's take a look and get in touch!</p>
-      <ul>
-        <li>30, Strand Road, Beside Jessop Company, Opposite Armenian Ghat, Kolkata - 700001</li>
-        <li><a href="tel:+919831721718">+91 9831721718</a> / <a href="tel:+919831721719">9831721719</a></li>
-        <li><a href="mailto:taraktubeco@gmail.com">taraktubeco@gmail.com</a></li>
+      <h4>Get in Touch</h4>
+      <ul class="footer-contact">
+        <li>{icon("pin", 16)}<span>{esc(ADDRESS)}</span></li>
+        <li>{icon("phone", 16)}<span><a href="tel:{PHONE_1}">+91 98317 21718</a><br><a href="tel:{PHONE_2}">+91 98317 21719</a></span></li>
+        <li>{icon("mail", 16)}<span><a href="mailto:{EMAIL}">{EMAIL}</a></span></li>
       </ul>
     </div>
   </div>
-  <div class="container legal">Copyright © 2026 Tarak Tube Co. All rights reserved. Proudly Powered By Dot Com Solutions</div>
+  <div class="container legal">
+    <span>© 2026 Tarak Tube Co. All rights reserved.</span>
+    <span>Powered by Dot Com Solutions</span>
+  </div>
 </footer>
-<a class="whatsapp-fab" href="https://wa.me/919831721718" target="_blank" rel="noopener" aria-label="WhatsApp">
+<button class="to-top" type="button" data-to-top aria-label="Back to top"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
+<a class="whatsapp-fab" href="{WHATSAPP}" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 2.1 17.7L1 23l5.4-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-3.2.7.7-3.1-.2-.3A9 9 0 1 1 12 20.5zm5-6.7c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.3-.4.1-.3c0-.1 0-.3-.1-.4s-.6-1.4-.8-1.9-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.2.9 2.3c.1.2 1.6 2.5 3.8 3.4s2.1.6 2.8.5 1.6-.7 1.8-1.3.2-1.2.1-1.3-.2-.2-.5-.3z"/></svg>
 </a>
 """
 
 
-def page_shell(title: str, root: str, body: str, active: str = "") -> str:
+def page_shell(title: str, root: str, body: str, active: str = "", description: str = "") -> str:
+    description = description or "Tarak Tube Co., Kolkata — wholesale supplier of pipes, fittings, valves, hand pumps and bath fittings since 1993."
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{html.escape(title)}</title>
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(description)}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="{root}assets/img/logo.png">
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="{root}assets/css/tokens.css">
   <link rel="stylesheet" href="{root}assets/css/chrome.css">
   <link rel="stylesheet" href="{root}assets/css/pages.css">
@@ -343,6 +513,7 @@ def page_shell(title: str, root: str, body: str, active: str = "") -> str:
 <body>
 {header_html(root, active)}
 <main>{body}</main>
+{cta_html(root)}
 {footer_html(root)}
 <script src="{root}assets/js/include.js"></script>
 <script src="{root}assets/js/main.js"></script>
@@ -352,24 +523,75 @@ def page_shell(title: str, root: str, body: str, active: str = "") -> str:
 """
 
 
-def product_card(product: dict, root: str) -> str:
-    specs_rows = ""
-    for key in ("Size", "Brand", "Grade"):
-        if key in product["specs"]:
-            specs_rows += f"<tr><th>{html.escape(key)}</th><td>{html.escape(product['specs'][key])}</td></tr>"
-    stock = '<p class="count">In stock</p>' if product["in_stock"] else ""
+def page_hero(crumbs: list[tuple[str, str]], title: str = "", lead: str = "") -> str:
+    trail = " ".join(
+        f'<a href="{href}">{esc(label)}</a><span aria-hidden="true">/</span>' if href else f"<span>{esc(label)}</span>"
+        for label, href in crumbs
+    )
+    heading = f"<h1>{esc(title)}</h1>" if title else ""
+    lead_html = f'<p class="lead">{lead}</p>' if lead else ""
     return f"""
-    <article class="card">
+    <section class="page-hero{'' if title else ' compact'}"><div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb">{trail}</nav>
+      {heading}{lead_html}
+    </div></section>"""
+
+
+def product_card(product: dict, root: str) -> str:
+    cat = product["categories"][0]["name"]
+    size = product["specs"].get("Size", "")
+    brand = product["brand"]
+    meta = []
+    if brand:
+        meta.append(f'<li><span>Brand</span>{esc(brand)}</li>')
+    if size:
+        meta.append(f'<li><span>Size</span>{esc(size)}</li>')
+    return f"""
+    <article class="card product-card">
       <a href="{root}product/{product['slug']}/">
-        <div class="media"><img src="{root}{product['image']}" alt="{html.escape(product['name'])}"></div>
+        <div class="media"><img src="{root}{product['image']}" alt="{esc(product['name'])}" loading="lazy"></div>
         <div class="body">
-          <h3>{html.escape(product['name'])}</h3>
-          {stock}
-          <table class="specs">{specs_rows}</table>
+          <p class="eyebrow">{esc(cat)}</p>
+          <h3>{esc(product['name'])}</h3>
+          <ul class="card-meta">{''.join(meta)}</ul>
+          <span class="card-link">View details {icon("arrow", 16)}</span>
         </div>
       </a>
     </article>
     """
+
+
+def category_card(cat: dict, root: str) -> str:
+    return f"""
+    <a class="card category-card" href="{root}product-category/{cat['slug']}/">
+      <div class="media"><img src="{root}{cat['image']}" alt="{esc(cat['name'])}" loading="lazy"></div>
+      <div class="body">
+        <h3>{esc(cat['name'])}</h3>
+        <span class="card-link">{plural(cat['count'])} {icon("arrow", 16)}</span>
+      </div>
+    </a>"""
+
+
+def category_chips(root: str, active: str = "") -> str:
+    chips = [f'<a class="chip{" is-active" if not active else ""}" href="{root}shop/">All</a>']
+    for name, slug in NAV_CATEGORIES:
+        cls = " is-active" if slug == active else ""
+        chips.append(f'<a class="chip{cls}" href="{root}product-category/{slug}/">{esc(name)}</a>')
+    return f'<div class="chips">{"".join(chips)}</div>'
+
+
+def brand_strip() -> str:
+    return "".join(f'<li>{esc(b)}</li>' for b in PARTNER_BRANDS)
+
+
+def stats_html(product_count: int) -> str:
+    stats = [
+        ("1993", "Established in Kolkata"),
+        ("2500+", "Customers served"),
+        (f"{product_count}", "Products in catalogue"),
+        (f"{len(PARTNER_BRANDS)}+", "Leading brand partners"),
+    ]
+    return "".join(f'<div class="stat"><strong>{v}</strong><span>{esc(l)}</span></div>' for v, l in stats)
 
 
 def write(path: Path, content: str) -> None:
@@ -380,122 +602,186 @@ def write(path: Path, content: str) -> None:
 def home_page(products: list[dict], categories: list[dict]) -> str:
     lookup = by_slug(products)
     cat_lookup = {c["slug"]: c for c in categories}
-    cards = []
-    for slug in HOME_CATEGORIES:
-        cat = cat_lookup.get(slug)
-        if not cat:
-            continue
-        cards.append(
-            f"""<a class="card" href="./product-category/{cat['slug']}/">
-              <div class="media"><img src="./{cat['image']}" alt="{html.escape(cat['name'])}"></div>
-              <div class="body"><h3>{html.escape(cat['name'])}</h3><p class="count">{cat['count']} products</p></div>
-            </a>"""
-        )
+    cards = "".join(category_card(cat_lookup[s], "./") for s in HOME_CATEGORIES if s in cat_lookup)
 
-    def carousel(title: str, slugs: list[str]) -> str:
+    def carousel(eyebrow: str, title: str, slugs: list[str], link: str) -> str:
         items = "".join(product_card(lookup[s], "./") for s in slugs if s in lookup)
         return f"""
-        <section class="section">
+        <section class="section" data-carousel>
           <div class="container">
-            <div class="section-head"><h2>{html.escape(title)}</h2></div>
-            <div class="carousel-wrap" data-carousel>
-              <div class="carousel-nav"><button type="button" data-prev aria-label="Previous">‹</button>
-              <button type="button" data-next aria-label="Next">›</button></div>
-              <div class="carousel-track" data-track>{items}</div>
+            <div class="section-head">
+              <div><p class="eyebrow">{esc(eyebrow)}</p><h2>{esc(title)}</h2></div>
+              <div class="section-actions">
+                <a class="text-link" href="{link}">View all {icon("arrow", 16)}</a>
+                <div class="carousel-nav">
+                  <button type="button" data-prev aria-label="Previous">{icon("prev")}</button>
+                  <button type="button" data-next aria-label="Next">{icon("next")}</button>
+                </div>
+              </div>
             </div>
+            <div class="carousel-track" data-track>{items}</div>
           </div>
         </section>
         """
 
+    features = [
+        "Wholesale, retail &amp; project supply",
+        "Authorised range from leading brands",
+        "Trusted by contractors, plumbers &amp; builders",
+        "Robust distribution for timely delivery",
+    ]
+    # The list is doubled so the CSS loop scrolls seamlessly.
+    ticker = "".join(f"<li>{esc(b)}</li>" for b in PARTNER_BRANDS * 4)
+    feature_list = "".join(f"<li>{icon('check', 18)}<span>{f}</span></li>" for f in features)
+
     body = f"""
     <section class="hero">
-      <article class="hero-slide is-active" data-hero-slide style="background-image:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.25)),url('./assets/img/hero-finolex.jpg')">
-        <div class="container hero-copy">
+      <article class="hero-slide is-active" data-hero-slide style="background-image:linear-gradient(90deg,rgba(6,12,34,.85) 0%,rgba(6,12,34,.55) 45%,rgba(6,12,34,.1) 100%),url('./assets/img/hero-finolex.jpg')">
+        <div class="container"><div class="hero-copy">
           <p class="hero-kicker">Finolex Plumbing System</p>
-          <h1>Right Choice For Hot &amp; Cold Water Plumbing System</h1>
-          <a class="btn light" href="./shop/">Learn More</a>
-        </div>
+          <h1>Right Choice for Hot &amp; Cold Water Plumbing</h1>
+          <p class="hero-lead">CPVC, UPVC and SWR pipes &amp; fittings from Finolex, supplied in bulk across Kolkata.</p>
+          <div class="hero-actions">
+            <a class="btn light" href="./shop/">Explore Products</a>
+            <a class="btn outline-light" href="./contact-us/">Request a Quote</a>
+          </div>
+        </div></div>
       </article>
-      <article class="hero-slide" data-hero-slide style="background-image:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.25)),url('./assets/img/hero-paras.jpg')">
-        <div class="container hero-copy">
+      <article class="hero-slide" data-hero-slide style="background-image:linear-gradient(90deg,rgba(6,12,34,.85) 0%,rgba(6,12,34,.55) 45%,rgba(6,12,34,.1) 100%),url('./assets/img/hero-paras.jpg')">
+        <div class="container"><div class="hero-copy">
           <p class="hero-kicker">Paras Ultra</p>
-          <h1>Look at Our Wide Range of Bath faucets</h1>
-          <a class="btn light" href="./product-category/bath-fittings/">Learn More</a>
-        </div>
+          <h1>A Wide Range of Premium Bath Faucets</h1>
+          <p class="hero-lead">Pillar cocks, sink cocks, showers and wall mixers for every bathroom and kitchen.</p>
+          <div class="hero-actions">
+            <a class="btn light" href="./product-category/bath-fittings/">View Bath Fittings</a>
+            <a class="btn outline-light" href="./contact-us/">Request a Quote</a>
+          </div>
+        </div></div>
       </article>
-      <div class="hero-nav">
-        <button type="button" data-hero-prev aria-label="Previous slide">‹</button>
-        <button type="button" data-hero-next aria-label="Next slide">›</button>
+      <div class="hero-nav container">
+        <div class="hero-dots">
+          <button type="button" data-hero-dot aria-label="Slide 1"><span></span></button>
+          <button type="button" data-hero-dot aria-label="Slide 2"><span></span></button>
+        </div>
+        <div class="hero-arrows">
+          <button type="button" data-hero-prev aria-label="Previous slide">{icon("prev")}</button>
+          <button type="button" data-hero-next aria-label="Next slide">{icon("next")}</button>
+        </div>
       </div>
+    </section>
+    <section class="stats-band"><div class="container stats-grid">{stats_html(len(products))}</div></section>
+    <section class="brand-ticker" aria-label="Brands we supply">
+      <p class="container ticker-label">Authorised supplier of leading brands</p>
+      <div class="ticker"><ul class="ticker-track">{ticker}</ul></div>
     </section>
     <section class="section">
       <div class="container">
-        <div class="section-head"><h2>Product Categories</h2><a href="./shop/">All products</a></div>
-        <div class="category-grid">{''.join(cards)}</div>
+        <div class="section-head">
+          <div><p class="eyebrow">What we supply</p><h2>Product Categories</h2></div>
+          <a class="text-link" href="./shop/">View all products {icon("arrow", 16)}</a>
+        </div>
+        <div class="category-grid">{cards}</div>
       </div>
     </section>
-    {carousel("Our Brands", BRAND_SLUGS)}
-    {carousel("House Connection Fittings", HOUSE_SLUGS)}
-    {carousel("Valves", VALVE_SLUGS)}
+    {carousel("Featured", "Pipes & Fittings", BRAND_SLUGS, "./product-category/pipes-fittings/")}
     <section class="section alt">
       <div class="container intro-block">
         <div>
-          <h2>Welcome To Tarak Tube Company!</h2>
-          <p>{html.escape(COMPANY)} {html.escape(HOME_INTRO)}</p>
+          <p class="eyebrow">About us</p>
+          <h2>Welcome to Tarak Tube Co.</h2>
+          <p>{esc(COMPANY)}</p>
+          <p>{esc(HOME_INTRO)}</p>
+          <a class="btn" href="./about-us/">More About Us</a>
         </div>
-        <div>
-          <a class="btn" href="./about-us/">Read More</a>
+        <div class="intro-panel">
+          <ul class="feature-list">{feature_list}</ul>
+          <div class="brand-block">
+            <p class="eyebrow">Brands we supply</p>
+            <ul class="brand-list">{brand_strip()}</ul>
+          </div>
         </div>
       </div>
     </section>
+    {carousel("Featured", "House Connection Fittings", HOUSE_SLUGS, "./product-category/house-connection-fittings/")}
+    {carousel("Featured", "Valves", VALVE_SLUGS, "./product-category/valves/")}
     """
-    return page_shell("Tarak Tube Co.", "./", body, "home")
+    return page_shell("Tarak Tube Co. — Pipes, Fittings & Valves Supplier, Kolkata", "./", body, "home")
 
 
-def about_page() -> str:
+def about_page(product_count: int) -> str:
+    clients = ", ".join(CLIENT_GROUPS)
     body = f"""
-    <section class="page-hero"><div class="container">
-      <p class="crumbs"><a href="../">Home</a> / About us</p>
-      <h1>Welcome To Tarak Tube Co</h1>
-    </div></section>
+    {page_hero([("Home", "../"), ("About Us", "")], "About Tarak Tube Co.",
+               "A trusted name in pipes, fittings and plumbing supplies in Kolkata since 1993.")}
     <section class="section"><div class="container">
-      <p>{html.escape(COMPANY)}</p>
-      <div class="about-grid" style="margin-top:28px">
-        <article class="about-card"><h3>Mission</h3><p>{html.escape(MISSION)}</p></article>
-        <article class="about-card"><h3>Vision</h3><p>{html.escape(VISION)}</p></article>
-        <article class="about-card"><h3>Goals</h3><p>{html.escape(GOALS)}</p></article>
+      <div class="about-intro">
+        <div>
+          <p class="eyebrow">Who we are</p>
+          <h2>Three decades of dependable supply</h2>
+          <p>{esc(COMPANY)}</p>
+          <p>We serve contractors, plumbers and renowned groups such as {esc(clients)}, backed by a dedicated team and a robust distribution network.</p>
+        </div>
+        <div class="stats-grid boxed">{stats_html(product_count)}</div>
       </div>
     </div></section>
+    <section class="section alt"><div class="container">
+      <div class="section-head"><div><p class="eyebrow">Our purpose</p><h2>Mission, Vision &amp; Goals</h2></div></div>
+      <div class="about-grid">
+        <article class="about-card"><span class="about-num">01</span><h3>Mission</h3><p>{esc(MISSION)}</p></article>
+        <article class="about-card"><span class="about-num">02</span><h3>Vision</h3><p>{esc(VISION)}</p></article>
+        <article class="about-card wide"><span class="about-num">03</span><h3>Goals</h3><p>{esc(GOALS)}</p></article>
+      </div>
+    </div></section>
+    <section class="section"><div class="container">
+      <div class="section-head"><div><p class="eyebrow">Partners</p><h2>Brands We Supply</h2></div></div>
+      <ul class="brand-list large">{brand_strip()}</ul>
+    </div></section>
     """
-    return page_shell("About us – Tarak Tube Co.", "../", body, "about")
+    return page_shell("About Us – Tarak Tube Co.", "../", body, "about")
 
 
 def contact_page() -> str:
-    body = """
-    <section class="page-hero"><div class="container">
-      <p class="crumbs"><a href="../">Home</a> / Contact Us</p>
-      <h1>Contact Us</h1>
-    </div></section>
+    q = urllib.parse.quote(MAP_QUERY)
+    map_embed = f"https://www.google.com/maps?q={q}&z=16&output=embed"
+    map_link = f"https://www.google.com/maps/dir/?api=1&destination={q}"
+    body = f"""
+    {page_hero([("Home", "../"), ("Contact Us", "")], "Contact Us",
+               "Have a requirement or a question? Call, WhatsApp or send us a message.")}
     <section class="section"><div class="container contact-grid">
       <article class="contact-card">
-        <h2>Tarak Tube Co</h2>
-        <p>Taha &amp; Hussain Deesawala</p>
-        <p>30, Strand Road, Beside Jessop Company, opposite Armenian Ghat, Kolkata - 700001</p>
-        <p><a href="tel:+919831721718">+91 9831721718</a>, <a href="tel:+919831721719">9831721719</a></p>
-        <p><a href="mailto:taraktubeco@gmail.com">taraktubeco@gmail.com</a></p>
-        <h3>Store Hours:</h3>
-        <p>Mon. – Fri: 10:00am - 7:00pm<br>Saturday: 10:00am - 5:00pm<br>Sunday Closed</p>
+        <p class="eyebrow">Visit our store</p>
+        <h2>Tarak Tube Co.</h2>
+        <p class="muted">Taha &amp; Hussain Deesawala</p>
+        <ul class="contact-list">
+          <li>{icon("pin")}<div><strong>Address</strong><span>{esc(ADDRESS)}</span></div></li>
+          <li>{icon("phone")}<div><strong>Phone</strong><span><a href="tel:{PHONE_1}">+91 98317 21718</a>, <a href="tel:{PHONE_2}">+91 98317 21719</a></span></div></li>
+          <li>{icon("mail")}<div><strong>Email</strong><span><a href="mailto:{EMAIL}">{EMAIL}</a></span></div></li>
+          <li>{icon("clock")}<div><strong>Store Hours</strong><span>Mon – Fri: 10:00 am – 7:00 pm<br>Saturday: 10:00 am – 5:00 pm<br>Sunday: Closed</span></div></li>
+        </ul>
+        <a class="btn whatsapp" href="{WHATSAPP}" target="_blank" rel="noopener">{WA_ICON} Chat on WhatsApp</a>
       </article>
       <article class="contact-card">
-        <h2>Drop Us A Line</h2>
-        <form class="form" action="mailto:taraktubeco@gmail.com" method="post" enctype="text/plain">
-          <label>Your name<input name="name" required></label>
-          <label>Your email<input name="email" type="email" required></label>
+        <p class="eyebrow">Send a message</p>
+        <h2>Drop Us a Line</h2>
+        <form class="form" action="mailto:{EMAIL}" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label>Your name<input name="name" required></label>
+            <label>Your email<input name="email" type="email" required></label>
+          </div>
           <label>Subject<input name="subject" required></label>
-          <label>Your message (optional)<textarea name="message"></textarea></label>
-          <button class="btn" type="submit">Submit</button>
+          <label><span>Your message <span class="muted">(optional)</span></span><textarea name="message"></textarea></label>
+          <button class="btn" type="submit">Send Message</button>
         </form>
       </article>
+    </div></section>
+    <section class="section alt map-section"><div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">Find us</p><h2>Our Location</h2></div>
+        <a class="text-link" href="{map_link}" target="_blank" rel="noopener">Get directions {icon("arrow", 16)}</a>
+      </div>
+      <div class="map-card">
+        <iframe title="Tarak Tube Co. on Google Maps" src="{map_embed}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
     </div></section>
     """
     return page_shell("Contact Us – Tarak Tube Co.", "../", body, "contact")
@@ -504,29 +790,23 @@ def contact_page() -> str:
 def shop_page(products: list[dict]) -> str:
     cards = "".join(product_card(p, "../") for p in products)
     body = f"""
-    <section class="page-hero"><div class="container">
-      <p class="crumbs"><a href="../">Home</a> / Products</p>
-      <h1>Products</h1>
-      <p class="meta">{len(products)} products</p>
-    </div></section>
+    {page_hero([("Home", "../"), ("Products", "")], "All Products", plural(len(products)) + " across pipes, fittings, valves, hand pumps and bath fittings.")}
     <section class="section"><div class="container">
+      {category_chips("../")}
       <div class="product-grid">{cards}</div>
     </div></section>
     """
-    return page_shell("Shop – Tarak Tube Co.", "../", body, "shop")
+    return page_shell("Products – Tarak Tube Co.", "../", body, "shop")
 
 
 def category_page(category: dict, products: list[dict]) -> str:
     items = [p for p in products if any(c["slug"] == category["slug"] for c in p["categories"])]
     cards = "".join(product_card(p, "../../") for p in items)
     body = f"""
-    <section class="page-hero"><div class="container">
-      <p class="crumbs"><a href="../../">Home</a> / <a href="../../shop/">Products</a> / {html.escape(category['name'])}</p>
-      <h1>{html.escape(category['name'])}</h1>
-      <p class="meta">{len(items)} products</p>
-    </div></section>
+    {page_hero([("Home", "../../"), ("Products", "../../shop/"), (category['name'], "")], category["name"], plural(len(items)))}
     <section class="section"><div class="container">
-      <div class="product-grid">{cards or '<p>No products in this category yet.</p>'}</div>
+      {category_chips("../../", category["slug"])}
+      <div class="product-grid">{cards or '<p class="empty">No products in this category yet.</p>'}</div>
     </div></section>
     """
     return page_shell(f"{category['name']} – Tarak Tube Co.", "../../", body, "shop")
@@ -534,8 +814,10 @@ def category_page(category: dict, products: list[dict]) -> str:
 
 def product_page(product: dict, products: list[dict]) -> str:
     cat = product["categories"][0]
-    rows = "".join(
-        f"<tr><th>{html.escape(k)}</th><td>{html.escape(v)}</td></tr>" for k, v in product["specs"].items()
+    specs = product["specs"]
+    rows = "".join(f"<tr><th>{esc(k)}</th><td>{esc(v)}</td></tr>" for k, v in specs.items())
+    key_rows = "".join(
+        f"<tr><th>{k}</th><td>{esc(specs[k])}</td></tr>" for k in ("Size", "Brand", "Grade") if k in specs
     )
     related = [
         p
@@ -544,34 +826,44 @@ def product_page(product: dict, products: list[dict]) -> str:
         and any(c["slug"] == cat["slug"] for c in p["categories"])
     ][:4]
     related_html = "".join(product_card(p, "../../") for p in related)
-    desc = html.escape(product["description"]) if product["description"] else "Contact Tarak Tube Co. for sizes, brands, and current stock."
-    wa = f"https://wa.me/919831721718?text={urllib.parse.quote('I would like to enquire about ' + product['name'])}"
+    desc = esc(product["description"]) if product["description"] else "Contact Tarak Tube Co. for sizes, brands, and current stock."
+    wa = f"{WHATSAPP}?text={urllib.parse.quote('I would like to enquire about ' + product['name'])}"
+    sku = f'<span class="sku">SKU: {esc(product["sku"])}</span>' if product["sku"] else ""
+    stock = '<span class="stock">In stock</span>' if product["in_stock"] else '<span class="stock out">Enquire for stock</span>'
+    specs_section = (
+        f'<div><h2>Specifications</h2><table class="specs">{rows}</table></div>' if rows else ""
+    )
+    related_section = (
+        f"""<section class="section"><div class="container">
+      <div class="section-head"><div><p class="eyebrow">More from {esc(cat['name'])}</p><h2>Related Products</h2></div>
+      <a class="text-link" href="../../product-category/{cat['slug']}/">View category {icon("arrow", 16)}</a></div>
+      <div class="product-grid">{related_html}</div>
+    </div></section>"""
+        if related
+        else ""
+    )
     body = f"""
-    <section class="page-hero"><div class="container">
-      <p class="crumbs"><a href="../../">Home</a> / <a href="../../shop/">Products</a> / <a href="../../product-category/{cat['slug']}/">{html.escape(cat['name'])}</a> / {html.escape(product['name'])}</p>
-    </div></section>
+    {page_hero([("Home", "../../"), ("Products", "../../shop/"), (cat['name'], f"../../product-category/{cat['slug']}/"), (product['name'], "")])}
     <section class="section"><div class="container product-layout">
-      <div class="product-photo"><img src="../../{product['image']}" alt="{html.escape(product['name'])}"></div>
-      <div>
-        <h1>{html.escape(product['name'])}</h1>
-        <p class="meta">{html.escape(product['brand'] or '')} {('· SKU: ' + html.escape(product['sku'])) if product['sku'] else ''}</p>
-        <p class="stock">{"In stock" if product["in_stock"] else "Enquire for stock"}</p>
-        <table class="specs">{rows}</table>
-        <p style="margin-top:20px"><a class="btn" href="{wa}" target="_blank" rel="noopener">Enquire on WhatsApp</a></p>
+      <div class="product-photo"><img src="../../{product['image']}" alt="{esc(product['name'])}"></div>
+      <div class="product-info">
+        <a class="eyebrow" href="../../product-category/{cat['slug']}/">{esc(cat['name'])}</a>
+        <h1>{esc(product['name'])}</h1>
+        <div class="product-tags">{stock}{sku}</div>
+        {f'<table class="specs">{key_rows}</table>' if key_rows else ''}
+        <div class="product-actions">
+          <a class="btn whatsapp" href="{wa}" target="_blank" rel="noopener">{WA_ICON} Enquire on WhatsApp</a>
+          <a class="btn ghost" href="tel:{PHONE_1}">{icon("phone")} Call Us</a>
+        </div>
       </div>
     </div></section>
-    <section class="section alt"><div class="container">
-      <h2>Description</h2>
-      <p>{desc}</p>
-      <h3 style="margin-top:24px">Additional information</h3>
-      <table class="specs">{rows}</table>
+    <section class="section alt"><div class="container detail-grid{'' if specs_section else ' single'}">
+      <div><h2>Description</h2><p>{desc}</p></div>
+      {specs_section}
     </div></section>
-    <section class="section"><div class="container">
-      <div class="section-head"><h2>Related products</h2></div>
-      <div class="product-grid">{related_html}</div>
-    </div></section>
+    {related_section}
     """
-    return page_shell(f"{product['name']} – Tarak Tube Co.", "../../", body, "shop")
+    return page_shell(f"{product['name']} – Tarak Tube Co.", "../../", body, "shop", product["description"][:155])
 
 
 def accessories_page() -> dict:
@@ -596,7 +888,7 @@ def download_all(products: list[dict]) -> None:
     for name, url in cat_images.items():
         jobs.append((url, ROOT / "assets/img/categories" / name))
     for product in products:
-        if product["source_image"]:
+        if product.get("source_image"):
             jobs.append((product["source_image"], ROOT / product["image"]))
 
     ok = 0
@@ -628,7 +920,7 @@ def main() -> None:
     download_all(products)
     write_partials()
     write(ROOT / "index.html", home_page(products, categories))
-    write(ROOT / "about-us/index.html", about_page())
+    write(ROOT / "about-us/index.html", about_page(len(products)))
     write(ROOT / "contact-us/index.html", contact_page())
     write(ROOT / "shop/index.html", shop_page(products))
     for category in categories:
